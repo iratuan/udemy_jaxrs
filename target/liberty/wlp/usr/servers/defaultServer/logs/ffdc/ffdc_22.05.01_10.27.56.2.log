@@ -1,0 +1,266 @@
+------Start of DE processing------ = [01/05/2022 10:27:56:673 BRT]
+Exception = jakarta.persistence.PersistenceException
+Source = com.ibm.ws.container.service.state.internal.ApplicationStateManager
+probeid = 54
+Stack Dump = jakarta.persistence.PersistenceException: CWWJP0040E: The persistence.xml in application restapi, module restapi.war, has a syntax error at line number: 1, column number: 1.
+	at com.ibm.ws.jpa.management.JaxbUnmarshaller.unmarshal(JaxbUnmarshaller.java:132)
+	at com.ibm.ws.jpa.management.JPAPxmlInfo.extractPersistenceUnits(JPAPxmlInfo.java:82)
+	at com.ibm.ws.jpa.management.JPAScopeInfo.processPersistenceUnit(JPAScopeInfo.java:88)
+	at com.ibm.ws.jpa.management.JPAApplInfo.addPersistenceUnits(JPAApplInfo.java:119)
+	at com.ibm.ws.jpa.container.osgi.internal.JPAComponentImpl.processWebModulePersistenceXml(JPAComponentImpl.java:575)
+	at com.ibm.ws.jpa.container.osgi.internal.JPAComponentImpl.applicationStarting(JPAComponentImpl.java:362)
+	at com.ibm.ws.container.service.state.internal.ApplicationStateManager.fireStarting(ApplicationStateManager.java:51)
+	at com.ibm.ws.container.service.state.internal.StateChangeServiceImpl.fireApplicationStarting(StateChangeServiceImpl.java:50)
+	at com.ibm.ws.app.manager.module.internal.SimpleDeployedAppInfoBase.preDeployApp(SimpleDeployedAppInfoBase.java:547)
+	at com.ibm.ws.app.manager.module.internal.SimpleDeployedAppInfoBase.installApp(SimpleDeployedAppInfoBase.java:508)
+	at com.ibm.ws.app.manager.module.internal.DeployedAppInfoBase.deployApp(DeployedAppInfoBase.java:349)
+	at com.ibm.ws.app.manager.war.internal.WARApplicationHandlerImpl.install(WARApplicationHandlerImpl.java:65)
+	at com.ibm.ws.app.manager.internal.statemachine.StartAction.execute(StartAction.java:161)
+	at com.ibm.ws.app.manager.internal.statemachine.ApplicationStateMachineImpl.enterState(ApplicationStateMachineImpl.java:1357)
+	at com.ibm.ws.app.manager.internal.statemachine.ApplicationStateMachineImpl.performAction(ApplicationStateMachineImpl.java:1222)
+	at com.ibm.ws.app.manager.internal.statemachine.ApplicationStateMachineImpl.run(ApplicationStateMachineImpl.java:909)
+	at com.ibm.ws.threading.internal.ExecutorServiceImpl$RunnableWrapper.run(ExecutorServiceImpl.java:245)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 1; Fim prematuro do arquivo.
+	at java.xml/com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:204)
+	at java.xml/com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:178)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:400)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:327)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(XMLScanner.java:1465)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl$PrologDriver.next(XMLDocumentScannerImpl.java:1013)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:605)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.next(XMLNSDocumentScannerImpl.java:112)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:542)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:889)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:825)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1224)
+	at java.xml/com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:637)
+	at java.xml/com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl.parse(SAXParserImpl.java:326)
+	at java.xml/javax.xml.parsers.SAXParser.parse(SAXParser.java:197)
+	at com.ibm.ws.jpa.management.JaxbUnmarshaller.unmarshal(JaxbUnmarshaller.java:90)
+	... 19 more
+
+Dump of callerThis
+Object type = com.ibm.ws.container.service.state.internal.ApplicationStateManager
+  serialVersionUID = -6685368059484454124
+  $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@5c2fecb1
+    strings[0] = "TraceComponent[com.ibm.ws.container.service.state.internal.ApplicationStateManager,class com.ibm.ws.container.service.state.internal.ApplicationStateManager,[Runtime],null,null]"
+  listeners = class com.ibm.wsspi.kernel.service.utils.ConcurrentServiceReferenceSet@4f7a5564
+    referenceName = "applicationStateListeners"
+    contextRef = class java.util.concurrent.atomic.AtomicReference@30e84c43
+      serialVersionUID = "/* Could not access serialVersionUID */"
+      VALUE = "/* Could not access VALUE */"
+      value = "/* Could not access value */"
+    elementMap = class java.util.LinkedHashMap@26971af3
+      serialVersionUID = "/* Could not access serialVersionUID */"
+      head = "/* Could not access head */"
+      tail = "/* Could not access tail */"
+      accessOrder = "/* Could not access accessOrder */"
+      serialVersionUID = "/* Could not access serialVersionUID */"
+      DEFAULT_INITIAL_CAPACITY = "/* Could not access DEFAULT_INITIAL_CAPACITY */"
+      MAXIMUM_CAPACITY = "/* Could not access MAXIMUM_CAPACITY */"
+      DEFAULT_LOAD_FACTOR = "/* Could not access DEFAULT_LOAD_FACTOR */"
+      TREEIFY_THRESHOLD = "/* Could not access TREEIFY_THRESHOLD */"
+      UNTREEIFY_THRESHOLD = "/* Could not access UNTREEIFY_THRESHOLD */"
+      MIN_TREEIFY_CAPACITY = "/* Could not access MIN_TREEIFY_CAPACITY */"
+      table = "/* Could not access table */"
+      entrySet = "/* Could not access entrySet */"
+      size = "/* Could not access size */"
+      modCount = "/* Could not access modCount */"
+      threshold = "/* Could not access threshold */"
+      loadFactor = "/* Could not access loadFactor */"
+      keySet = "/* Could not access keySet */"
+      values = "/* Could not access values */"
+    elementSet = class java.util.concurrent.ConcurrentSkipListSet@63aae9c8
+      serialVersionUID = "/* Could not access serialVersionUID */"
+      m = "/* Could not access m */"
+    elementSetUnsorted = false
+    serialVersionUID = 756240983881166148
+    $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@3481c420
+      strings[0] = "TraceComponent[com.ibm.wsspi.kernel.service.utils.ConcurrentServiceReferenceSet,class com.ibm.wsspi.kernel.service.utils.ConcurrentServiceReferenceSet,[kernelUtils],com.ibm.ws.kernel.service.utils.resources.ServiceMessages,null]"
+  serialVersionUID = 2284273176985484160
+  $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@5bcf45e7
+    strings[0] = "TraceComponent[com.ibm.ws.container.service.state.internal.StateChangeManager,class com.ibm.ws.container.service.state.internal.StateChangeManager,[Runtime],null,null]"
+
+Dump of objectArray[0]
+Object type = com.ibm.ws.container.service.app.deploy.internal.ApplicationInfoImpl
+  appName = "restapi"
+  appMetaData = class com.ibm.ws.container.service.app.deploy.internal.ApplicationMetaDataImpl@f6d6b0c
+    j2eeName = class com.ibm.ws.container.service.metadata.internal.J2EENameImpl@1045a194
+      serialVersionUID = 7488184044073147667
+      application = "restapi"
+      module = null
+      component = null
+      string = null
+      j2eeNameBytes = null
+      $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@746f9ff1
+    serialVersionUID = -7906531148367236579
+    $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@1b08cfdd
+      strings[0] = "TraceComponent[com.ibm.ws.container.service.app.deploy.internal.ApplicationMetaDataImpl,class com.ibm.ws.container.service.app.deploy.internal.ApplicationMetaDataImpl,[container.service],com.ibm.ws.container.service.resources.Messages,null]"
+    tc = class com.ibm.websphere.ras.TraceComponent@47d3abf0
+      strings[0] = "TraceComponent[com.ibm.ws.runtime.metadata.MetaDataImpl,class com.ibm.ws.runtime.metadata.MetaDataImpl,[Runtime],null,null]"
+    NUM_STATIC_SLOTS = 4
+    ID_UNINITIALIZED = -1
+    id = 8
+    metaDataInterface = class java.lang.Class@5b6fba06
+      ANNOTATION = "/* Could not access ANNOTATION */"
+      ENUM = "/* Could not access ENUM */"
+      SYNTHETIC = "/* Could not access SYNTHETIC */"
+      cachedConstructor = "/* Could not access cachedConstructor */"
+      name = "/* Could not access name */"
+      module = "/* Could not access module */"
+      packageName = "/* Could not access packageName */"
+      componentType = "/* Could not access componentType */"
+      allPermDomain = "/* Could not access allPermDomain */"
+      reflectionData = "/* Could not access reflectionData */"
+      classRedefinedCount = "/* Could not access classRedefinedCount */"
+      genericInfo = "/* Could not access genericInfo */"
+      EMPTY_CLASS_ARRAY = "/* Could not access EMPTY_CLASS_ARRAY */"
+      serialVersionUID = "/* Could not access serialVersionUID */"
+      serialPersistentFields = "/* Could not access serialPersistentFields */"
+      reflectionFactory = "/* Could not access reflectionFactory */"
+      enumConstants = "/* Could not access enumConstants */"
+      enumConstantDirectory = "/* Could not access enumConstantDirectory */"
+      annotationData = "/* Could not access annotationData */"
+      annotationType = "/* Could not access annotationType */"
+      classValueMap = "/* Could not access classValueMap */"
+    staticSlots = class java.lang.Object[4]
+      Object[0] = null
+      Object[1] = class com.ibm.ws.injectionengine.osgi.internal.OSGiInjectionScopeData@4825a2c6
+      Object[2] = null
+      Object[3] = null
+    dynamicSlots = class java.lang.Object[4]
+      Object[0] = null
+      Object[1] = "restapi"
+      Object[2] = null
+      Object[3] = null
+  appContainer = class com.ibm.ws.adaptable.module.internal.AdaptableContainerImpl@64ab6d26
+    root = class com.ibm.ws.adaptable.module.internal.AdaptableContainerImpl@64ab6d26
+    rootOverlay = class com.ibm.ws.artifact.overlay.internal.DirectoryBasedOverlayContainerImpl@680a7741
+      base = class com.ibm.ws.artifact.loose.internal.LooseArchive@247a5e66
+      maskSet = class java.util.HashSet@402b74ee
+      cfHolder = class com.ibm.ws.artifact.overlay.internal.OverlayContainerFactoryImpl@6cce2c9a
+      fileOverlayContainer = class com.ibm.ws.artifact.file.internal.FileContainer@12d767c9
+      overlayDirectory = class java.io.File@4332867d
+      cacheDirForOverlay = class java.io.File@35cd7913
+      overlayNotifier = class com.ibm.ws.artifact.overlay.internal.DirectoryBasedOverlayNotifier@2edae740
+      enclosingContainer = null
+      entryInEnclosingContainer = null
+      nestedOverlays = class java.util.concurrent.ConcurrentHashMap@79a247d
+      cacheStore = class com.ibm.ws.artifact.overlay.internal.OverlayCache@50cc5b9d
+      parentOverlay = null
+      isPassThroughMode = true
+      serialVersionUID = -6650153487216279998
+      $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@7988fc7e
+    factoryHolder = class com.ibm.ws.adaptable.module.internal.AdaptableModuleFactoryImpl@41badd7f
+      adapterFactoryService = class com.ibm.ws.adaptable.module.internal.AdapterFactoryServiceImpl@290889d7
+      containerFactory = class com.ibm.ws.artifact.internal.ArtifactContainerFactoryService@53210e28
+      overlayContainerFactory = class com.ibm.ws.artifact.overlay.internal.OverlayContainerFactoryImpl@6cce2c9a
+      serialVersionUID = 4200251809856292987
+      $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@4832d5ec
+    delegate = class com.ibm.ws.artifact.overlay.internal.DirectoryBasedOverlayContainerImpl@680a7741
+    notifier = class com.ibm.ws.adaptable.module.internal.NotifierImpl@770ea313
+      root = class com.ibm.ws.adaptable.module.internal.AdaptableContainerImpl@64ab6d26
+      delegateNotifier = class com.ibm.ws.artifact.overlay.internal.DirectoryBasedOverlayNotifier@2edae740
+      delegateRoot = class com.ibm.ws.artifact.overlay.internal.DirectoryBasedOverlayContainerImpl@680a7741
+      listenerDelegates = class java.util.HashMap@2838a109
+      serialVersionUID = 6839382523957017880
+      $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@b29edc1
+    serialVersionUID = -5950528200509051684
+    $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@3e108988
+      strings[0] = "TraceComponent[com.ibm.ws.adaptable.module.internal.AdaptableContainerImpl,class com.ibm.ws.adaptable.module.internal.AdaptableContainerImpl,[archive.adaptable],null,null]"
+  configHelper = class com.ibm.ws.app.manager.module.ApplicationNestedConfigHelper@62c61d07
+    appInfo = class com.ibm.ws.app.manager.internal.ApplicationInstallInfo@39cd1f39
+    serialVersionUID = -3174031738676705046
+    $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@1a810b68
+      strings[0] = "TraceComponent[com.ibm.ws.app.manager.module.ApplicationNestedConfigHelper,class com.ibm.ws.app.manager.module.ApplicationNestedConfigHelper,[applications, app.manager],null,null]"
+  applicationInformation = class com.ibm.ws.app.manager.internal.ApplicationInstallInfo@39cd1f39
+    _config = class com.ibm.ws.app.manager.internal.ApplicationConfig@a17e906
+      tc = class com.ibm.websphere.ras.TraceComponent@ce4a543
+      _configPid = "com.ibm.ws.app.manager_75"
+      _config = class com.ibm.ws.config.admin.ConfigurationDictionary@20d5533e
+      _applicationManager = class com.ibm.ws.app.manager.ApplicationManager@69c8043d
+      _location = "restapi.war"
+      _type = "war"
+      _name = "restapi"
+      _notificationBroadcasterSupport = class javax.management.NotificationBroadcasterSupport@478c9d83
+      ONE_TIME_JANDEX_MSGS_DISPLAYED = true
+      serialVersionUID = -2151423388299667431
+    _handlerInfo = class java.util.concurrent.atomic.AtomicReference@67ba5f72
+      serialVersionUID = "/* Could not access serialVersionUID */"
+      VALUE = "/* Could not access VALUE */"
+      value = "/* Could not access value */"
+    _container = class java.util.concurrent.atomic.AtomicReference@3b3cc27d
+      serialVersionUID = "/* Could not access serialVersionUID */"
+      VALUE = "/* Could not access VALUE */"
+      value = "/* Could not access value */"
+    _resolvedLocation = class java.util.concurrent.atomic.AtomicReference@5af5fbda
+      serialVersionUID = "/* Could not access serialVersionUID */"
+      VALUE = "/* Could not access VALUE */"
+      value = "/* Could not access value */"
+    _handler = class com.ibm.ws.app.manager.war.internal.WARApplicationHandlerImpl@6f9f765b
+      futureMonitor = class com.ibm.ws.threading.internal.FutureMonitorImpl@2eded1d2
+      deployedAppFactory = class com.ibm.ws.app.manager.war.internal.WARDeployedAppInfoFactoryImpl@60b57b08
+      serialVersionUID = 4622845147410944782
+      $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@18afe0d3
+    _ami = class java.util.concurrent.atomic.AtomicReference@5aebf515
+      serialVersionUID = "/* Could not access serialVersionUID */"
+      VALUE = "/* Could not access VALUE */"
+      value = "/* Could not access value */"
+    _updateHandler = class com.ibm.ws.app.manager.internal.statemachine.ApplicationStateMachineImpl@799fb1f
+      _tc = class com.ibm.websphere.ras.TraceComponent@6c1eb12b
+      EMPTY_FUTURE_ARRAY = interface java.util.concurrent.Future[0]
+      asmSequenceNumber = class java.util.concurrent.atomic.AtomicLong@6a508cc7
+      _qscaCounter = class java.util.concurrent.atomic.AtomicInteger@2895559f
+      _failedThrowable = null
+      _interruptibleLock = class com.ibm.ws.app.manager.internal.statemachine.ApplicationStateMachineImpl$2@701d411e
+      _interruptible = false
+      _performingQueuedActions = true
+      _queuedActions = class java.util.concurrent.ConcurrentLinkedQueue@3bbb092e
+      _callbackState = class java.util.concurrent.atomic.AtomicReference@55e38c2a
+      blockAppStartingFutures = class java.util.Collections$SetFromMap@575812a4
+      waitingForAppHandlerFuture = class java.util.concurrent.atomic.AtomicReference@4d57ace0
+      waitingForExplicitStartFuture = class java.util.concurrent.atomic.AtomicReference@2e463e1d
+      startAfterFutures = class java.util.Collections$SetFromMap@678d6523
+      completionListener = class java.util.concurrent.atomic.AtomicReference@70579644
+      _notifyAppStopped = class java.util.concurrent.ConcurrentLinkedQueue@170402
+      _notifyAppStarting = class java.util.concurrent.ConcurrentLinkedQueue@1fbe64cb
+      _notifyAppInstallCalled = class java.util.concurrent.ConcurrentLinkedQueue@1316be62
+      _notifyAppStarted = class java.util.concurrent.ConcurrentLinkedQueue@5f3feff2
+      _notifyAppRemoved = class java.util.concurrent.ConcurrentLinkedQueue@67b0d703
+      _stateLock = class com.ibm.ws.app.manager.internal.statemachine.ApplicationStateMachineImpl$3@bc47f02
+      _internalState = class java.util.concurrent.atomic.AtomicReference@2d8725b6
+      _currentAction = class java.util.concurrent.atomic.AtomicReference@de71f8b
+      _rfa = class java.util.concurrent.atomic.AtomicReference@6c0ed9fb
+      _appInstallInfo = class java.util.concurrent.atomic.AtomicReference@449a9717
+      _update = class java.util.concurrent.atomic.AtomicBoolean@5024a0a7
+      _appConfig = class java.util.concurrent.atomic.AtomicReference@650af66f
+      _nextAppConfig = class java.util.concurrent.atomic.AtomicReference@7f513a34
+      _appContainer = class java.util.concurrent.atomic.AtomicReference@6fe328e6
+      _resolvedLocation = class java.util.concurrent.atomic.AtomicReference@1ab79c25
+      _handler = class java.util.concurrent.atomic.AtomicReference@283ca892
+      _asmSeqNo = 0
+      _ctx = class org.eclipse.osgi.internal.framework.BundleContextImpl@4f4b43cf
+      _locAdmin = class com.ibm.ws.kernel.service.location.internal.WsLocationAdminImpl@5ecab73b
+      _futureMonitor = class com.ibm.ws.threading.internal.FutureMonitorImpl@2eded1d2
+      _artifactFactory = class com.ibm.ws.artifact.internal.ArtifactContainerFactoryService@53210e28
+      _moduleFactory = class com.ibm.ws.adaptable.module.internal.AdaptableModuleFactoryImpl@41badd7f
+      _executorService = class com.ibm.ws.threading.internal.ExecutorServiceImpl@43de21af
+      _scheduledExecutorService = class com.ibm.ws.threading.internal.ScheduledExecutorImpl@2818001c
+      _asmHelper = class com.ibm.ws.app.manager.internal.ApplicationConfigurator$NamedApplication@76e7d0aa
+      _appMonitor = class com.ibm.ws.app.manager.internal.monitor.ApplicationMonitor@ee8e78e
+      _configurator = class com.ibm.ws.app.manager.internal.ApplicationConfigurator@7c07c376
+      enterStateCalled = class java.util.concurrent.atomic.AtomicBoolean@435db6f9
+      serialVersionUID = 4458043999335554711
+      serialVersionUID = -8760483717533387753
+      $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@1e002f30
+    serialVersionUID = 2630639237123415755
+    $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@13876e7e
+      strings[0] = "TraceComponent[com.ibm.ws.app.manager.internal.ApplicationInstallInfo,class com.ibm.ws.app.manager.internal.ApplicationInstallInfo,[applications, app.manager],com.ibm.ws.app.manager.internal.resources.AppManagerMessages,null]"
+  serialVersionUID = 5227817860647895780
+  $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@77bea347
+    strings[0] = "TraceComponent[com.ibm.ws.container.service.app.deploy.internal.ApplicationInfoImpl,class com.ibm.ws.container.service.app.deploy.internal.ApplicationInfoImpl,[container.service],com.ibm.ws.container.service.resources.Messages,null]"
+

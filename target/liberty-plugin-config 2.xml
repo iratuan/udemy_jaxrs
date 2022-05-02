@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<liberty-plugin-config>
+    <installDirectory>/Users/iratuan/Documents/Projetos/estudos/udemy_jaxrs/target/liberty/wlp</installDirectory>
+    <serverDirectory>/Users/iratuan/Documents/Projetos/estudos/udemy_jaxrs/target/liberty/wlp/usr/servers/defaultServer</serverDirectory>
+    <userDirectory>/Users/iratuan/Documents/Projetos/estudos/udemy_jaxrs/target/liberty/wlp/usr</userDirectory>
+    <serverOutputDirectory>/Users/iratuan/Documents/Projetos/estudos/udemy_jaxrs/target/liberty/wlp/usr/servers/defaultServer</serverOutputDirectory>
+    <serverName>defaultServer</serverName>
+    <configDirectory>/Users/iratuan/Documents/Projetos/estudos/udemy_jaxrs/src/main/liberty/config</configDirectory>
+    <configFile>/Users/iratuan/Documents/Projetos/estudos/udemy_jaxrs/src/main/liberty/config/server.xml</configFile>
+    <looseApplication>true</looseApplication>
+    <stripVersion>false</stripVersion>
+    <installAppPackages>project</installAppPackages>
+    <applicationFilename>restapi.war.xml</applicationFilename>
+    <assemblyArtifact>
+        <groupId>io.openliberty</groupId>
+        <artifactId>openliberty-kernel</artifactId>
+        <version>22.0.0.4</version>
+        <type>zip</type>
+    </assemblyArtifact>
+    <assemblyArchive>/Users/iratuan/.m2/repository/io/openliberty/openliberty-kernel/22.0.0.4/openliberty-kernel-22.0.0.4.zip</assemblyArchive>
+    <assemblyInstallDirectory>/Users/iratuan/Documents/Projetos/estudos/udemy_jaxrs/target/liberty</assemblyInstallDirectory>
+    <refresh>false</refresh>
+    <installAppsConfigDropins>/Users/iratuan/Documents/Projetos/estudos/udemy_jaxrs/target/liberty/wlp/usr/servers/defaultServer/configDropins/defaults/install_apps_configuration_1491924271.xml</installAppsConfigDropins>
+    <projectType>war</projectType>
+    <projectCompileDependency>org.projectlombok:lombok:1.18.24</projectCompileDependency>
+    <projectCompileDependency>org.postgresql:postgresql:42.2.15</projectCompileDependency>
+    <projectCompileDependency>org.checkerframework:checker-qual:3.5.0</projectCompileDependency>
+</liberty-plugin-config>

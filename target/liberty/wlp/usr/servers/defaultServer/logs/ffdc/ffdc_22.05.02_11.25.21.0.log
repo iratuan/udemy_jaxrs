@@ -1,0 +1,658 @@
+------Start of DE processing------ = [02/05/2022 11:25:21:872 BRT]
+Exception = jakarta.persistence.PersistenceException
+Source = com.ibm.ws.jpa.management.JPAPUnitInfo.createEMFactory
+probeid = 759
+Stack Dump = jakarta.persistence.PersistenceException: Exceção [EclipseLink-28018] (Eclipse Persistence Services - 3.0.2.v202107120736): org.eclipse.persistence.exceptions.EntityManagerSetupException
+Descrição da exceção: A pré-implementação de PersistenceUnit [default] falhou.
+Exceção interna: Exceção [EclipseLink-7161] (Eclipse Persistence Services - 3.0.2.v202107120736): org.eclipse.persistence.exceptions.ValidationException
+Descrição da exceção: A classe de entidade [class com.cruznobre.rest.core.entity.Brand] não tem chave primária especificada. Ela deve definir um @Id, @EmbeddedId ou @IdClass. Se você tiver definido PK usando qualquer uma dessas anotações, certifique-se de não ter tipo de acesso misto (campos e propriedades anotados) na hierarquia de classes de entidade.
+	at org.eclipse.persistence.internal.jpa.EntityManagerSetupImpl.createPredeployFailedPersistenceException(EntityManagerSetupImpl.java:2160)
+	at org.eclipse.persistence.internal.jpa.EntityManagerSetupImpl.predeploy(EntityManagerSetupImpl.java:2136)
+	at org.eclipse.persistence.jpa.PersistenceProvider.createContainerEntityManagerFactoryImpl(PersistenceProvider.java:350)
+	at org.eclipse.persistence.jpa.PersistenceProvider.createContainerEntityManagerFactory(PersistenceProvider.java:316)
+	at com.ibm.ws.jpa.management.JPAPUnitInfo.createEMFactory(JPAPUnitInfo.java:931)
+	at com.ibm.ws.jpa.management.JPAPUnitInfo.initialize(JPAPUnitInfo.java:767)
+	at com.ibm.ws.jpa.management.JPAPxmlInfo.extractPersistenceUnits(JPAPxmlInfo.java:182)
+	at com.ibm.ws.jpa.management.JPAScopeInfo.processPersistenceUnit(JPAScopeInfo.java:88)
+	at com.ibm.ws.jpa.management.JPAApplInfo.addPersistenceUnits(JPAApplInfo.java:119)
+	at com.ibm.ws.jpa.container.osgi.internal.JPAComponentImpl.processWebModulePersistenceXml(JPAComponentImpl.java:575)
+	at com.ibm.ws.jpa.container.osgi.internal.JPAComponentImpl.applicationStarting(JPAComponentImpl.java:362)
+	at com.ibm.ws.container.service.state.internal.ApplicationStateManager.fireStarting(ApplicationStateManager.java:51)
+	at com.ibm.ws.container.service.state.internal.StateChangeServiceImpl.fireApplicationStarting(StateChangeServiceImpl.java:50)
+	at com.ibm.ws.app.manager.module.internal.SimpleDeployedAppInfoBase.preDeployApp(SimpleDeployedAppInfoBase.java:547)
+	at com.ibm.ws.app.manager.module.internal.SimpleDeployedAppInfoBase.installApp(SimpleDeployedAppInfoBase.java:508)
+	at com.ibm.ws.app.manager.module.internal.DeployedAppInfoBase.deployApp(DeployedAppInfoBase.java:349)
+	at com.ibm.ws.app.manager.war.internal.WARApplicationHandlerImpl.install(WARApplicationHandlerImpl.java:65)
+	at com.ibm.ws.app.manager.internal.statemachine.StartAction.execute(StartAction.java:161)
+	at com.ibm.ws.app.manager.internal.statemachine.ApplicationStateMachineImpl.enterState(ApplicationStateMachineImpl.java:1357)
+	at com.ibm.ws.app.manager.internal.statemachine.ApplicationStateMachineImpl.performAction(ApplicationStateMachineImpl.java:1222)
+	at com.ibm.ws.app.manager.internal.statemachine.ApplicationStateMachineImpl.run(ApplicationStateMachineImpl.java:909)
+	at com.ibm.ws.threading.internal.ExecutorServiceImpl$RunnableWrapper.run(ExecutorServiceImpl.java:245)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: Exceção [EclipseLink-28018] (Eclipse Persistence Services - 3.0.2.v202107120736): org.eclipse.persistence.exceptions.EntityManagerSetupException
+Descrição da exceção: A pré-implementação de PersistenceUnit [default] falhou.
+Exceção interna: Exceção [EclipseLink-7161] (Eclipse Persistence Services - 3.0.2.v202107120736): org.eclipse.persistence.exceptions.ValidationException
+Descrição da exceção: A classe de entidade [class com.cruznobre.rest.core.entity.Brand] não tem chave primária especificada. Ela deve definir um @Id, @EmbeddedId ou @IdClass. Se você tiver definido PK usando qualquer uma dessas anotações, certifique-se de não ter tipo de acesso misto (campos e propriedades anotados) na hierarquia de classes de entidade.
+	at org.eclipse.persistence.exceptions.EntityManagerSetupException.predeployFailed(EntityManagerSetupException.java:233)
+	... 25 more
+Caused by: Exceção [EclipseLink-7161] (Eclipse Persistence Services - 3.0.2.v202107120736): org.eclipse.persistence.exceptions.ValidationException
+Descrição da exceção: A classe de entidade [class com.cruznobre.rest.core.entity.Brand] não tem chave primária especificada. Ela deve definir um @Id, @EmbeddedId ou @IdClass. Se você tiver definido PK usando qualquer uma dessas anotações, certifique-se de não ter tipo de acesso misto (campos e propriedades anotados) na hierarquia de classes de entidade.
+	at org.eclipse.persistence.exceptions.ValidationException.noPrimaryKeyAnnotationsFound(ValidationException.java:1432)
+	at org.eclipse.persistence.internal.jpa.metadata.accessors.classes.EntityAccessor.validatePrimaryKey(EntityAccessor.java:1537)
+	at org.eclipse.persistence.internal.jpa.metadata.accessors.classes.EntityAccessor.processMappingAccessors(EntityAccessor.java:1244)
+	at org.eclipse.persistence.internal.jpa.metadata.accessors.classes.EntityAccessor.process(EntityAccessor.java:694)
+	at org.eclipse.persistence.internal.jpa.metadata.MetadataProject.processStage2(MetadataProject.java:1870)
+	at org.eclipse.persistence.internal.jpa.metadata.MetadataProcessor.processORMMetadata(MetadataProcessor.java:576)
+	at org.eclipse.persistence.internal.jpa.deployment.PersistenceUnitProcessor.processORMetadata(PersistenceUnitProcessor.java:639)
+	at org.eclipse.persistence.internal.jpa.EntityManagerSetupImpl.predeploy(EntityManagerSetupImpl.java:2057)
+	... 23 more
+
+Dump of callerThis
+Object type = com.ibm.ws.jpa.container.osgi.internal.OSGiJPAPUnitInfo
+  tc = class com.ibm.websphere.ras.TraceComponent@36d298e5
+    strings[0] = "TraceComponent[com.ibm.ws.jpa.container.osgi.internal.OSGiJPAPUnitInfo,class com.ibm.ws.jpa.container.osgi.internal.OSGiJPAPUnitInfo,[JPA],com.ibm.ws.jpa.jpa,null]"
+  disableWsJpaUrlProcessing = false
+  ECLIPSELINK_TARGET_SERVER = "WebSphere_Liberty"
+  scopeInfo = class com.ibm.ws.jpa.management.JPAScopeInfo@4db01dea
+    tc = class com.ibm.websphere.ras.TraceComponent@39d6017a
+      strings[0] = "TraceComponent[com.ibm.ws.jpa.management.JPAScopeInfo,class com.ibm.ws.jpa.management.JPAScopeInfo,[JPA],com.ibm.ws.jpa.jpa,null]"
+    scopeName = "restapi.war"
+    scope = class com.ibm.ws.jpa.management.JPAPuScope@71f9e530
+      EJB_Scope = class com.ibm.ws.jpa.management.JPAPuScope@25c4b278
+      Web_Scope = class com.ibm.ws.jpa.management.JPAPuScope@71f9e530
+      EAR_Scope = class com.ibm.ws.jpa.management.JPAPuScope@2bf7efbf
+      Client_Scope = class com.ibm.ws.jpa.management.JPAPuScope@41f3ac1f
+      $VALUES = class com.ibm.ws.jpa.management.JPAPuScope[4]
+      name = "/* Could not access name */"
+      ordinal = "/* Could not access ordinal */"
+    pxmlsInfo = class java.util.HashMap@1815e034
+      serialVersionUID = "/* Could not access serialVersionUID */"
+      DEFAULT_INITIAL_CAPACITY = "/* Could not access DEFAULT_INITIAL_CAPACITY */"
+      MAXIMUM_CAPACITY = "/* Could not access MAXIMUM_CAPACITY */"
+      DEFAULT_LOAD_FACTOR = "/* Could not access DEFAULT_LOAD_FACTOR */"
+      TREEIFY_THRESHOLD = "/* Could not access TREEIFY_THRESHOLD */"
+      UNTREEIFY_THRESHOLD = "/* Could not access UNTREEIFY_THRESHOLD */"
+      MIN_TREEIFY_CAPACITY = "/* Could not access MIN_TREEIFY_CAPACITY */"
+      table = "/* Could not access table */"
+      entrySet = "/* Could not access entrySet */"
+      size = "/* Could not access size */"
+      modCount = "/* Could not access modCount */"
+      threshold = "/* Could not access threshold */"
+      loadFactor = "/* Could not access loadFactor */"
+      keySet = "/* Could not access keySet */"
+      values = "/* Could not access values */"
+  serialVersionUID = -898488667409903028
+  CLASS_NAME = "com.ibm.ws.jpa.management.JPAPUnitInfo"
+  tc = class com.ibm.websphere.ras.TraceComponent@44a77e8c
+    strings[0] = "TraceComponent[com.ibm.ws.jpa.management.JPAPUnitInfo,class com.ibm.ws.jpa.management.JPAPUnitInfo,[JPA],com.ibm.ws.jpa.jpa,null]"
+  tcTransformer = class com.ibm.websphere.ras.TraceComponent@39bfe3ac
+    strings[0] = "TraceComponent[com.ibm.ws.jpa.management.JPAPUnitInfo_Transformer,class com.ibm.ws.jpa.management.JPAPUnitInfo,[JPA.Transformer],com.ibm.ws.jpa.jpa,null]"
+  tcBytecodeCapture = class com.ibm.websphere.ras.TraceComponent@8555335
+    strings[0] = "TraceComponent[com.ibm.ws.jpa.management.JPAPUnitInfo_BytecodeCapture,class com.ibm.ws.jpa.management.JPAPUnitInfo,[JavaPersistenceByteCode],com.ibm.ws.jpa.jpa,null]"
+  svThreadContextAccessor = class com.ibm.ws.util.ThreadContextAccessor$ReflectionThreadContextAccessorImpl@2d532d2c
+    field = class java.lang.reflect.Field@1763218e
+    tc = class com.ibm.ejs.ras.TraceComponent@6a61a534
+      strings[0] = "TraceComponent[com.ibm.ws.util.ThreadContextAccessor,class com.ibm.ws.util.ThreadContextAccessor,[Runtime],null,null]"
+    PRINT_STACK_ON_SET_CTX_CLASSLOADER = false
+    PRIVILEGED_ACTION = class com.ibm.ws.util.ThreadContextAccessor$1@52c125c9
+    UNCHANGED = class com.ibm.ws.util.ThreadContextAccessor$Unchanged@6c2f8ac4
+    threadContextAccessor = class com.ibm.ws.util.ThreadContextAccessor$ReflectionThreadContextAccessorImpl@2d532d2c
+  ivApplInfo = class com.ibm.ws.jpa.container.osgi.internal.OSGiJPAApplInfo@1218a075
+    appInfo = class com.ibm.ws.container.service.app.deploy.internal.ApplicationInfoImpl@2802d751
+      appName = "restapi"
+      appMetaData = class com.ibm.ws.container.service.app.deploy.internal.ApplicationMetaDataImpl@4ce39f8a
+      appContainer = class com.ibm.ws.adaptable.module.internal.AdaptableContainerImpl@4e1a80f4
+      configHelper = class com.ibm.ws.app.manager.module.ApplicationNestedConfigHelper@2af5ba33
+      applicationInformation = class com.ibm.ws.app.manager.internal.ApplicationInstallInfo@79f5743b
+      serialVersionUID = 5227817860647895780
+      $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@37c195d4
+    serialVersionUID = 4444074326423067409
+    $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@4372cd08
+      strings[0] = "TraceComponent[com.ibm.ws.jpa.container.osgi.internal.OSGiJPAApplInfo,class com.ibm.ws.jpa.container.osgi.internal.OSGiJPAApplInfo,[JPA],com.ibm.ws.jpa.jpa,null]"
+    tc = class com.ibm.websphere.ras.TraceComponent@551688d2
+      strings[0] = "TraceComponent[com.ibm.ws.jpa.management.JPAApplInfo,class com.ibm.ws.jpa.management.JPAApplInfo,[JPA],com.ibm.ws.jpa.jpa,null]"
+    ivJPAComponent = class com.ibm.ws.jpa.container.osgi.internal.JPAComponentImpl@66c05310
+      tc = class com.ibm.websphere.ras.TraceComponent@6e75353d
+      priv = class com.ibm.ws.kernel.service.util.SecureAction@2f9a5e68
+      REFERENCE_JPA_RUNTIME = "jpaRuntime"
+      REFERENCE_TRANSACTION_MANAGER = "transactionManager"
+      REFERENCE_CONTEXT_ACCESSOR = "contextAccessor"
+      REFERENCE_RESOURCE_BINDING_LISTENERS = "resourceBindingListeners"
+      REFERENCE_JPA_PROVIDER = "jpaProvider"
+      REFERENCE_JPA_PROPS_PROVIDER = "jpaPropsProvider"
+      REFERENCE_APP_COORD = "appCoord"
+      REFERENCE_CLASSLOADING_SERVICE = "classLoadingService"
+      DEFAULT_PROPS_PREFIX = "defaultProperties.0.property."
+      DEFAULT_PROPS_NAME = ".name"
+      DEFAULT_PROPS_VALUE = ".value"
+      context = class org.apache.felix.scr.impl.manager.ComponentContextImpl@3b04d633
+      props = class org.apache.felix.scr.impl.helper.ReadOnlyDictionary@67cb0618
+      defaultProps = class java.util.HashMap@23b615cc
+      server = true
+      stuckApps = class java.util.concurrent.ConcurrentSkipListSet@5ea266cc
+      jpaRuntime = class com.ibm.wsspi.kernel.service.utils.AtomicServiceReference@438a9665
+      ivTransactionManagerSR = class com.ibm.wsspi.kernel.service.utils.AtomicServiceReference@7cceb3ca
+      ivContextAccessorSR = class com.ibm.wsspi.kernel.service.utils.AtomicServiceReference@6f45d1ea
+      resourceBindingListeners = class com.ibm.wsspi.kernel.service.utils.ConcurrentServiceReferenceSet@229c5ec8
+      providerIntegrationSR = class com.ibm.wsspi.kernel.service.utils.AtomicServiceReference@3532cd40
+      propProviderSRs = class com.ibm.wsspi.kernel.service.utils.ConcurrentServiceReferenceSet@3c6b78cf
+      classLoadingService = class com.ibm.ws.classloading.internal.ClassLoadingServiceImpl@7d603429
+      serialVersionUID = -2370793881760414845
+      tc = class com.ibm.websphere.ras.TraceComponent@3b9f3adf
+      PASSWORD_PROPS = class java.util.Arrays$ArrayList@3d4a5f53
+      applList = class java.util.Collections$SynchronizedMap@1eb1dd77
+      ivCallBackHandler = class com.ibm.ws.jpa.management.JPAUserTxCallBackHandler@797b736e
+      ivTxCallbackRegistered = false
+    applName = "restapi"
+    puScopes = class java.util.HashMap@33f51981
+      serialVersionUID = "/* Could not access serialVersionUID */"
+      DEFAULT_INITIAL_CAPACITY = "/* Could not access DEFAULT_INITIAL_CAPACITY */"
+      MAXIMUM_CAPACITY = "/* Could not access MAXIMUM_CAPACITY */"
+      DEFAULT_LOAD_FACTOR = "/* Could not access DEFAULT_LOAD_FACTOR */"
+      TREEIFY_THRESHOLD = "/* Could not access TREEIFY_THRESHOLD */"
+      UNTREEIFY_THRESHOLD = "/* Could not access UNTREEIFY_THRESHOLD */"
+      MIN_TREEIFY_CAPACITY = "/* Could not access MIN_TREEIFY_CAPACITY */"
+      table = "/* Could not access table */"
+      entrySet = "/* Could not access entrySet */"
+      size = "/* Could not access size */"
+      modCount = "/* Could not access modCount */"
+      threshold = "/* Could not access threshold */"
+      loadFactor = "/* Could not access loadFactor */"
+      keySet = "/* Could not access keySet */"
+      values = "/* Could not access values */"
+  ivArchivePuId = class com.ibm.ws.jpa.JPAPuId@676e8b7e
+    serialVersionUID = 662612505904938066
+    ivAppName = "restapi"
+    ivModJarName = "restapi.war"
+    ivPuName = "default"
+    ivCurHashCode = -917540153
+  ivTxType = class jakarta.persistence.spi.PersistenceUnitTransactionType@2afc9534
+    JTA = class jakarta.persistence.spi.PersistenceUnitTransactionType@2afc9534
+    RESOURCE_LOCAL = class jakarta.persistence.spi.PersistenceUnitTransactionType@49e04d57
+      JTA = class jakarta.persistence.spi.PersistenceUnitTransactionType@2afc9534
+      RESOURCE_LOCAL = class jakarta.persistence.spi.PersistenceUnitTransactionType@49e04d57
+      $VALUES = class jakarta.persistence.spi.PersistenceUnitTransactionType[2]
+      name = "/* Could not access name */"
+      ordinal = "/* Could not access ordinal */"
+    $VALUES = class jakarta.persistence.spi.PersistenceUnitTransactionType[2]
+      PersistenceUnitTransactionType[0] = class jakarta.persistence.spi.PersistenceUnitTransactionType@2afc9534
+      PersistenceUnitTransactionType[1] = class jakarta.persistence.spi.PersistenceUnitTransactionType@49e04d57
+    name = "/* Could not access name */"
+    ordinal = "/* Could not access ordinal */"
+  ivDesc = ""
+  ivProviderClassName = "org.eclipse.persistence.jpa.PersistenceProvider"
+  ivJtaDataSource = class com.ibm.ws.rsadapter.jdbc.WSJdbcDataSource@1e72f70a
+    strings[0] = "_______________________________________________________________________"
+    strings[1] = ""
+    strings[2] = "    First Failure Data Capture information for"
+    strings[3] = "          com.ibm.ws.rsadapter.jdbc.WSJdbcDataSource@1e72f70a"
+    strings[4] = "_______________________________________________________________________"
+    strings[5] = ""
+    strings[6] = "ResourceRefInfo:"
+    strings[7] = "  
+[Resource-ref CMConfigData key items]
+
+	res-sharing-scope:        0 (SHAREABLE)
+	res-isolation-level:      0 (TRANSACTION_NONE)
+	res-auth:                 1 (APPLICATION)
+	commitPriority            0
+	branchCoupling            -1
+	loginConfigurationName:   null
+	loginConfigProperties:    {}
+	Resource ref name:        not set
+	Queue manager id:        not set
+
+"
+    strings[8] = "Connection Manager:"
+    strings[9] = "  [ConnectionManager]@2a4ef0ff
+JNDI Name <jdbc/datasource>
+shareable <true>
+
+"
+    strings[10] = "_______________________________________________________________________"
+    strings[11] = ""
+    strings[12] = "    First Failure Data Capture information for"
+    strings[13] = "          com.ibm.ws.rsadapter.impl.WSManagedConnectionFactoryImpl@6c30b6a5"
+    strings[14] = "_______________________________________________________________________"
+    strings[15] = ""
+    strings[16] = "com.ibm.ws.rsadapter.DSConfig@6e13313"
+    strings[17] = "[beginTranForResultSetScrollingAPIs, true, beginTranForVendorAPIs, true, commitOrRollbackOnCleanup, null, connectionSharing, MatchOriginalRequest, isolationLevel, -1, jndiName, jdbc/datasource, enableConnectionCasting, false, queryTimeout, null, statementCacheSize, 10, supplementalJDBCTrace, null, syncQueryTimeoutWithTransactionTimeout, false, transactional, true]"
+    strings[18] = "{serverName=localhost, password=******, databaseName=showroom, user=postgres, portNumber=5555}"
+    strings[19] = "Vendor implementation class:"
+    strings[20] = "  class org.postgresql.ds.PGConnectionPoolDataSource
+"
+    strings[21] = "Type:"
+    strings[22] = "  interface javax.sql.ConnectionPoolDataSource
+"
+    strings[23] = "Underlying DataSource or Driver Object: org.postgresql.ds.PGConnectionPoolDataSource@2ced215a"
+    strings[24] = "  org.postgresql.ds.PGConnectionPoolDataSource@2ced215a
+"
+    strings[25] = "Instance id:"
+    strings[26] = "  1
+"
+    strings[27] = "Log Writer:"
+    strings[28] = "  null
+"
+    strings[29] = "Counter of fatal connection errors on ManagedConnections created by this MCF:"
+    strings[30] = "  0
+"
+  ivNonJtaDataSource = null
+  ivMappingFileNames = class java.util.ArrayList@493ee7b9
+    serialVersionUID = "/* Could not access serialVersionUID */"
+    DEFAULT_CAPACITY = "/* Could not access DEFAULT_CAPACITY */"
+    EMPTY_ELEMENTDATA = "/* Could not access EMPTY_ELEMENTDATA */"
+    DEFAULTCAPACITY_EMPTY_ELEMENTDATA = "/* Could not access DEFAULTCAPACITY_EMPTY_ELEMENTDATA */"
+    elementData = "/* Could not access elementData */"
+    size = "/* Could not access size */"
+    modCount = "/* Could not access modCount */"
+  ivJarFileURLs = class java.util.ArrayList@5a18a09b
+    serialVersionUID = "/* Could not access serialVersionUID */"
+    DEFAULT_CAPACITY = "/* Could not access DEFAULT_CAPACITY */"
+    EMPTY_ELEMENTDATA = "/* Could not access EMPTY_ELEMENTDATA */"
+    DEFAULTCAPACITY_EMPTY_ELEMENTDATA = "/* Could not access DEFAULTCAPACITY_EMPTY_ELEMENTDATA */"
+    elementData = "/* Could not access elementData */"
+    size = "/* Could not access size */"
+    modCount = "/* Could not access modCount */"
+  ivManagedClassNames = class java.util.ArrayList@1403cbd9
+    serialVersionUID = "/* Could not access serialVersionUID */"
+    DEFAULT_CAPACITY = "/* Could not access DEFAULT_CAPACITY */"
+    EMPTY_ELEMENTDATA = "/* Could not access EMPTY_ELEMENTDATA */"
+    DEFAULTCAPACITY_EMPTY_ELEMENTDATA = "/* Could not access DEFAULTCAPACITY_EMPTY_ELEMENTDATA */"
+    elementData = "/* Could not access elementData */"
+    size = "/* Could not access size */"
+    modCount = "/* Could not access modCount */"
+  ivExcludeUnlistedClasses = false
+  ivProperties = class java.util.Properties@1d40a4f4
+    serialVersionUID = "/* Could not access serialVersionUID */"
+    UNSAFE = "/* Could not access UNSAFE */"
+    defaults = "/* Could not access defaults */"
+    map = "/* Could not access map */"
+    table = "/* Could not access table */"
+    count = "/* Could not access count */"
+    threshold = "/* Could not access threshold */"
+    loadFactor = "/* Could not access loadFactor */"
+    modCount = "/* Could not access modCount */"
+    serialVersionUID = "/* Could not access serialVersionUID */"
+    MAX_ARRAY_SIZE = "/* Could not access MAX_ARRAY_SIZE */"
+    keySet = "/* Could not access keySet */"
+    entrySet = "/* Could not access entrySet */"
+    values = "/* Could not access values */"
+    KEYS = "/* Could not access KEYS */"
+    VALUES = "/* Could not access VALUES */"
+    ENTRIES = "/* Could not access ENTRIES */"
+  ivJtaDataSourceJNDIName = "jdbc/datasource"
+  ivNonJtaDataSourceJNDIName = null
+  ivPUnitRootURL = class java.net.URL@23fd9bca
+    BUILTIN_HANDLERS_PREFIX = "/* Could not access BUILTIN_HANDLERS_PREFIX */"
+    serialVersionUID = "/* Could not access serialVersionUID */"
+    protocolPathProp = "/* Could not access protocolPathProp */"
+    protocol = "/* Could not access protocol */"
+    host = "/* Could not access host */"
+    port = "/* Could not access port */"
+    file = "/* Could not access file */"
+    query = "/* Could not access query */"
+    authority = "/* Could not access authority */"
+    path = "/* Could not access path */"
+    userInfo = "/* Could not access userInfo */"
+    ref = "/* Could not access ref */"
+    hostAddress = "/* Could not access hostAddress */"
+    handler = "/* Could not access handler */"
+    hashCode = "/* Could not access hashCode */"
+    tempState = "/* Could not access tempState */"
+    factory = "/* Could not access factory */"
+    defaultFactory = "/* Could not access defaultFactory */"
+    gate = "/* Could not access gate */"
+    handlers = "/* Could not access handlers */"
+    streamHandlerLock = "/* Could not access streamHandlerLock */"
+    serialPersistentFields = "/* Could not access serialPersistentFields */"
+  ivClassLoader = class com.ibm.ws.classloading.internal.AppClassLoader@1f3ebfed
+    tc = class com.ibm.websphere.ras.TraceComponent@3e4d6f5b
+      strings[0] = "TraceComponent[com.ibm.ws.classloading.internal.AppClassLoader,class com.ibm.ws.classloading.internal.AppClassLoader,[ClassLoadingService],com.ibm.ws.classloading.internal.resources.ClassLoadingServiceMessages,null]"
+    forbiddenClassNames = class java.util.Collections$UnmodifiableSet@3ab9804d
+      serialVersionUID = "/* Could not access serialVersionUID */"
+      serialVersionUID = "/* Could not access serialVersionUID */"
+      c = "/* Could not access c */"
+    FORBIDDEN_PROPERTIES = "forbidden.properties"
+    disableSharedClassesCache = false
+    PARENT_FIRST_SEARCH_ORDER = class java.util.Collections$UnmodifiableRandomAccessList@5ebd1982
+      serialVersionUID = "/* Could not access serialVersionUID */"
+      serialVersionUID = "/* Could not access serialVersionUID */"
+      list = "/* Could not access list */"
+      serialVersionUID = "/* Could not access serialVersionUID */"
+      c = "/* Could not access c */"
+    packagesDefined = class java.util.Collections$SetFromMap@28cce57b
+      m = "/* Could not access m */"
+      s = "/* Could not access s */"
+      serialVersionUID = "/* Could not access serialVersionUID */"
+    CLASS_LOADING_TRACE_PREFIX = "com.ibm.ws.class.load."
+    DEFAULT_PACKAGE = "default.package"
+    perPackageClassLoadingTraceComponents = class java.util.concurrent.ConcurrentHashMap@5e81b3c7
+      serialVersionUID = "/* Could not access serialVersionUID */"
+      MAXIMUM_CAPACITY = "/* Could not access MAXIMUM_CAPACITY */"
+      DEFAULT_CAPACITY = "/* Could not access DEFAULT_CAPACITY */"
+      MAX_ARRAY_SIZE = "/* Could not access MAX_ARRAY_SIZE */"
+      DEFAULT_CONCURRENCY_LEVEL = "/* Could not access DEFAULT_CONCURRENCY_LEVEL */"
+      LOAD_FACTOR = "/* Could not access LOAD_FACTOR */"
+      TREEIFY_THRESHOLD = "/* Could not access TREEIFY_THRESHOLD */"
+      UNTREEIFY_THRESHOLD = "/* Could not access UNTREEIFY_THRESHOLD */"
+      MIN_TREEIFY_CAPACITY = "/* Could not access MIN_TREEIFY_CAPACITY */"
+      MIN_TRANSFER_STRIDE = "/* Could not access MIN_TRANSFER_STRIDE */"
+      RESIZE_STAMP_BITS = "/* Could not access RESIZE_STAMP_BITS */"
+      MAX_RESIZERS = "/* Could not access MAX_RESIZERS */"
+      RESIZE_STAMP_SHIFT = "/* Could not access RESIZE_STAMP_SHIFT */"
+      MOVED = "/* Could not access MOVED */"
+      TREEBIN = "/* Could not access TREEBIN */"
+      RESERVED = "/* Could not access RESERVED */"
+      HASH_BITS = "/* Could not access HASH_BITS */"
+      NCPU = "/* Could not access NCPU */"
+      serialPersistentFields = "/* Could not access serialPersistentFields */"
+      table = "/* Could not access table */"
+      nextTable = "/* Could not access nextTable */"
+      baseCount = "/* Could not access baseCount */"
+      sizeCtl = "/* Could not access sizeCtl */"
+      transferIndex = "/* Could not access transferIndex */"
+      cellsBusy = "/* Could not access cellsBusy */"
+      counterCells = "/* Could not access counterCells */"
+      keySet = "/* Could not access keySet */"
+      values = "/* Could not access values */"
+      entrySet = "/* Could not access entrySet */"
+      U = "/* Could not access U */"
+      SIZECTL = "/* Could not access SIZECTL */"
+      TRANSFERINDEX = "/* Could not access TRANSFERINDEX */"
+      BASECOUNT = "/* Could not access BASECOUNT */"
+      CELLSBUSY = "/* Could not access CELLSBUSY */"
+      CELLVALUE = "/* Could not access CELLVALUE */"
+      ABASE = "/* Could not access ABASE */"
+      ASHIFT = "/* Could not access ASHIFT */"
+      keySet = "/* Could not access keySet */"
+      values = "/* Could not access values */"
+    config = class com.ibm.ws.classloading.internal.ClassLoaderConfigurationImpl@229ab062
+      DEFAULT_PROTECTION_DOMAIN = class java.security.ProtectionDomain@759b5211
+      delegateLast = false
+      includeAppExtensions = true
+      id = class com.ibm.ws.classloading.serializable.ClassLoaderIdentityImpl@e000ea8
+      parentId = null
+      sharedLibraries = class java.util.ArrayList@5b0876af
+      commonLibraries = class java.util.Collections$EmptyList@7f572390
+      providers = class java.util.Collections$EmptyList@7f572390
+      nativeLibraryContainers = class java.util.Collections$EmptyList@7f572390
+      protectionDomain = class java.security.ProtectionDomain@112c15ad
+      serialVersionUID = 9091690180200375339
+      $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@70eea38e
+    privateLibraries = null
+    delegateLoaders = class com.ibm.ws.classloading.internal.util.CompositeIterable@14ddccba
+      iterables = class java.util.Arrays$ArrayList@279dbe75
+      serialVersionUID = -1227195994638150837
+      $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@12e3bd45
+    nativeLibraryFiles = class java.util.ArrayList@5b751467
+      serialVersionUID = "/* Could not access serialVersionUID */"
+      DEFAULT_CAPACITY = "/* Could not access DEFAULT_CAPACITY */"
+      EMPTY_ELEMENTDATA = "/* Could not access EMPTY_ELEMENTDATA */"
+      DEFAULTCAPACITY_EMPTY_ELEMENTDATA = "/* Could not access DEFAULTCAPACITY_EMPTY_ELEMENTDATA */"
+      elementData = "/* Could not access elementData */"
+      size = "/* Could not access size */"
+      modCount = "/* Could not access modCount */"
+    transformers = class java.util.ArrayList@8b98b45
+      serialVersionUID = "/* Could not access serialVersionUID */"
+      DEFAULT_CAPACITY = "/* Could not access DEFAULT_CAPACITY */"
+      EMPTY_ELEMENTDATA = "/* Could not access EMPTY_ELEMENTDATA */"
+      DEFAULTCAPACITY_EMPTY_ELEMENTDATA = "/* Could not access DEFAULTCAPACITY_EMPTY_ELEMENTDATA */"
+      elementData = "/* Could not access elementData */"
+      size = "/* Could not access size */"
+      modCount = "/* Could not access modCount */"
+    systemTransformers = class java.util.Collections$EmptyList@7f572390
+      serialVersionUID = "/* Could not access serialVersionUID */"
+      modCount = "/* Could not access modCount */"
+    apiAccess = class com.ibm.ws.classloading.internal.GatewayClassLoader@4f57ee45
+      config = class com.ibm.ws.classloading.internal.GatewayConfigurationImpl@546c114
+      wiringMonitor = class com.ibm.ws.classloading.internal.GatewayClassLoader$1@6a19a628
+      bundle = class org.eclipse.osgi.internal.framework.EquinoxBundle@6fc11ecc
+      wiring = class org.eclipse.osgi.container.ModuleWiring@7ad39479
+      cl = null
+      bLoader = class org.eclipse.osgi.internal.loader.BundleLoader@5891684e
+      resourceProviders = class com.ibm.ws.classloading.internal.CompositeResourceProvider@6b6c4c29
+      serialVersionUID = -5503641212193211983
+      $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@5bc7eff5
+    generator = class com.ibm.ws.classloading.internal.ClassGeneratorManager@51588dc
+      tc = class com.ibm.websphere.ras.TraceComponent@18a598b9
+      generatorRefs = class com.ibm.wsspi.kernel.service.utils.ConcurrentServiceReferenceSet@66010a30
+      serialVersionUID = 4152663586056483310
+    protectionDomains = class java.util.concurrent.ConcurrentHashMap@76306235
+      serialVersionUID = "/* Could not access serialVersionUID */"
+      MAXIMUM_CAPACITY = "/* Could not access MAXIMUM_CAPACITY */"
+      DEFAULT_CAPACITY = "/* Could not access DEFAULT_CAPACITY */"
+      MAX_ARRAY_SIZE = "/* Could not access MAX_ARRAY_SIZE */"
+      DEFAULT_CONCURRENCY_LEVEL = "/* Could not access DEFAULT_CONCURRENCY_LEVEL */"
+      LOAD_FACTOR = "/* Could not access LOAD_FACTOR */"
+      TREEIFY_THRESHOLD = "/* Could not access TREEIFY_THRESHOLD */"
+      UNTREEIFY_THRESHOLD = "/* Could not access UNTREEIFY_THRESHOLD */"
+      MIN_TREEIFY_CAPACITY = "/* Could not access MIN_TREEIFY_CAPACITY */"
+      MIN_TRANSFER_STRIDE = "/* Could not access MIN_TRANSFER_STRIDE */"
+      RESIZE_STAMP_BITS = "/* Could not access RESIZE_STAMP_BITS */"
+      MAX_RESIZERS = "/* Could not access MAX_RESIZERS */"
+      RESIZE_STAMP_SHIFT = "/* Could not access RESIZE_STAMP_SHIFT */"
+      MOVED = "/* Could not access MOVED */"
+      TREEBIN = "/* Could not access TREEBIN */"
+      RESERVED = "/* Could not access RESERVED */"
+      HASH_BITS = "/* Could not access HASH_BITS */"
+      NCPU = "/* Could not access NCPU */"
+      serialPersistentFields = "/* Could not access serialPersistentFields */"
+      table = "/* Could not access table */"
+      nextTable = "/* Could not access nextTable */"
+      baseCount = "/* Could not access baseCount */"
+      sizeCtl = "/* Could not access sizeCtl */"
+      transferIndex = "/* Could not access transferIndex */"
+      cellsBusy = "/* Could not access cellsBusy */"
+      counterCells = "/* Could not access counterCells */"
+      keySet = "/* Could not access keySet */"
+      values = "/* Could not access values */"
+      entrySet = "/* Could not access entrySet */"
+      U = "/* Could not access U */"
+      SIZECTL = "/* Could not access SIZECTL */"
+      TRANSFERINDEX = "/* Could not access TRANSFERINDEX */"
+      BASECOUNT = "/* Could not access BASECOUNT */"
+      CELLSBUSY = "/* Could not access CELLSBUSY */"
+      CELLVALUE = "/* Could not access CELLVALUE */"
+      ABASE = "/* Could not access ABASE */"
+      ASHIFT = "/* Could not access ASHIFT */"
+      keySet = "/* Could not access keySet */"
+      values = "/* Could not access values */"
+    hook = null
+    serialVersionUID = 6298584331839778391
+    tc = class com.ibm.websphere.ras.TraceComponent@176e9538
+      strings[0] = "TraceComponent[com.ibm.ws.classloading.internal.ContainerClassLoader,class com.ibm.ws.classloading.internal.ContainerClassLoader,[ClassLoadingService],com.ibm.ws.classloading.internal.resources.ClassLoadingServiceMessages,null]"
+    smartClassPath = class com.ibm.ws.classloading.internal.ContainerClassLoader$SmartClassPathImpl@32972c15
+      rwLock = class java.util.concurrent.locks.ReentrantReadWriteLock@5b0cc335
+      outstandingContainers = class java.util.concurrent.atomic.AtomicInteger@55ede68b
+      usePackageMap = true
+      maxLastNotFound = 250
+      maxLastFound = 900
+      maxLastReallyNotFound = 900
+      propsInUse = false
+      classPath = class java.util.concurrent.CopyOnWriteArrayList@ed96e92
+      MAX_LASTNOTFOUND = 250
+      lastNotFound = class java.util.concurrent.CopyOnWriteArrayList@2398d1bf
+      MAX_LASTFOUND = 900
+      lastFoundURL = class java.util.Collections$SynchronizedMap@197ba2f9
+      MAX_LASTREALLYNOTFOUND = 900
+      lastReallyNotFoundURL = class java.util.Collections$SynchronizedMap@5c93e2ba
+      packageMap = class java.util.HashMap@47593c9b
+      containers = class java.util.Collections$SetFromMap@222908e6
+      serialVersionUID = 1586111247084489525
+      $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@7314511d
+    nativeLibraryContainers = class java.util.ArrayList@741ac274
+      serialVersionUID = "/* Could not access serialVersionUID */"
+      DEFAULT_CAPACITY = "/* Could not access DEFAULT_CAPACITY */"
+      EMPTY_ELEMENTDATA = "/* Could not access EMPTY_ELEMENTDATA */"
+      DEFAULTCAPACITY_EMPTY_ELEMENTDATA = "/* Could not access DEFAULTCAPACITY_EMPTY_ELEMENTDATA */"
+      elementData = "/* Could not access elementData */"
+      size = "/* Could not access size */"
+      modCount = "/* Could not access modCount */"
+    redefiner = class com.ibm.ws.classloading.internal.util.ClassRedefiner@5d60e743
+      tc = class com.ibm.websphere.ras.TraceComponent@2afa5210
+      LS = "
+"
+      inst = class jdk.proxy2.$Proxy3@203ebc63
+      serialVersionUID = 2420101865139508526
+    jarProtocol = "wsjar:"
+    mapCreationQueue = class java.util.concurrent.Executors$FinalizableDelegatedExecutorService@28b41710
+      e = "/* Could not access e */"
+    serialVersionUID = 2907229643147424365
+    parent = class com.ibm.ws.classloading.internal.GatewayClassLoader@4f57ee45
+    serialVersionUID = 7632539847817580154
+    $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@4ae0cd61
+      strings[0] = "TraceComponent[com.ibm.ws.classloading.internal.LibertyLoader,class com.ibm.ws.classloading.internal.LibertyLoader,[ClassLoadingService],com.ibm.ws.classloading.internal.resources.ClassLoadingServiceMessages,null]"
+    pdcache = "/* Could not access pdcache */"
+  tempClassLoader = null
+  ivTransformers = class java.util.concurrent.CopyOnWriteArrayList@3c7efb56
+    serialVersionUID = "/* Could not access serialVersionUID */"
+    lock = "/* Could not access lock */"
+    array = "/* Could not access array */"
+  xmlSchemaVersion = "2.2"
+  ivCaching = class jakarta.persistence.SharedCacheMode@3629b203
+    ALL = class jakarta.persistence.SharedCacheMode@7da21e45
+      ALL = class jakarta.persistence.SharedCacheMode@7da21e45
+      NONE = class jakarta.persistence.SharedCacheMode@1223902a
+      ENABLE_SELECTIVE = class jakarta.persistence.SharedCacheMode@5962edcc
+      DISABLE_SELECTIVE = class jakarta.persistence.SharedCacheMode@4b13ce7f
+      UNSPECIFIED = class jakarta.persistence.SharedCacheMode@3629b203
+      $VALUES = class jakarta.persistence.SharedCacheMode[5]
+      name = "/* Could not access name */"
+      ordinal = "/* Could not access ordinal */"
+    NONE = class jakarta.persistence.SharedCacheMode@1223902a
+      ALL = class jakarta.persistence.SharedCacheMode@7da21e45
+      NONE = class jakarta.persistence.SharedCacheMode@1223902a
+      ENABLE_SELECTIVE = class jakarta.persistence.SharedCacheMode@5962edcc
+      DISABLE_SELECTIVE = class jakarta.persistence.SharedCacheMode@4b13ce7f
+      UNSPECIFIED = class jakarta.persistence.SharedCacheMode@3629b203
+      $VALUES = class jakarta.persistence.SharedCacheMode[5]
+      name = "/* Could not access name */"
+      ordinal = "/* Could not access ordinal */"
+    ENABLE_SELECTIVE = class jakarta.persistence.SharedCacheMode@5962edcc
+      ALL = class jakarta.persistence.SharedCacheMode@7da21e45
+      NONE = class jakarta.persistence.SharedCacheMode@1223902a
+      ENABLE_SELECTIVE = class jakarta.persistence.SharedCacheMode@5962edcc
+      DISABLE_SELECTIVE = class jakarta.persistence.SharedCacheMode@4b13ce7f
+      UNSPECIFIED = class jakarta.persistence.SharedCacheMode@3629b203
+      $VALUES = class jakarta.persistence.SharedCacheMode[5]
+      name = "/* Could not access name */"
+      ordinal = "/* Could not access ordinal */"
+    DISABLE_SELECTIVE = class jakarta.persistence.SharedCacheMode@4b13ce7f
+      ALL = class jakarta.persistence.SharedCacheMode@7da21e45
+      NONE = class jakarta.persistence.SharedCacheMode@1223902a
+      ENABLE_SELECTIVE = class jakarta.persistence.SharedCacheMode@5962edcc
+      DISABLE_SELECTIVE = class jakarta.persistence.SharedCacheMode@4b13ce7f
+      UNSPECIFIED = class jakarta.persistence.SharedCacheMode@3629b203
+      $VALUES = class jakarta.persistence.SharedCacheMode[5]
+      name = "/* Could not access name */"
+      ordinal = "/* Could not access ordinal */"
+    UNSPECIFIED = class jakarta.persistence.SharedCacheMode@3629b203
+    $VALUES = class jakarta.persistence.SharedCacheMode[5]
+      SharedCacheMode[0] = class jakarta.persistence.SharedCacheMode@7da21e45
+      SharedCacheMode[1] = class jakarta.persistence.SharedCacheMode@1223902a
+      SharedCacheMode[2] = class jakarta.persistence.SharedCacheMode@5962edcc
+      SharedCacheMode[3] = class jakarta.persistence.SharedCacheMode@4b13ce7f
+      SharedCacheMode[4] = class jakarta.persistence.SharedCacheMode@3629b203
+    name = "/* Could not access name */"
+    ordinal = "/* Could not access ordinal */"
+  ivValidationMode = null
+  ivEMFactory = null
+  ivEMFactoryException = null
+  ivCreateEMFAllowed = true
+  ivEMFMap = null
+  ivEMPoolMap = class java.util.HashMap@2ed6c736
+    serialVersionUID = "/* Could not access serialVersionUID */"
+    DEFAULT_INITIAL_CAPACITY = "/* Could not access DEFAULT_INITIAL_CAPACITY */"
+    MAXIMUM_CAPACITY = "/* Could not access MAXIMUM_CAPACITY */"
+    DEFAULT_LOAD_FACTOR = "/* Could not access DEFAULT_LOAD_FACTOR */"
+    TREEIFY_THRESHOLD = "/* Could not access TREEIFY_THRESHOLD */"
+    UNTREEIFY_THRESHOLD = "/* Could not access UNTREEIFY_THRESHOLD */"
+    MIN_TREEIFY_CAPACITY = "/* Could not access MIN_TREEIFY_CAPACITY */"
+    table = "/* Could not access table */"
+    entrySet = "/* Could not access entrySet */"
+    size = "/* Could not access size */"
+    modCount = "/* Could not access modCount */"
+    threshold = "/* Could not access threshold */"
+    loadFactor = "/* Could not access loadFactor */"
+    keySet = "/* Could not access keySet */"
+    values = "/* Could not access values */"
+  ivEMPoolCapacity = -1
+  transformExclusionRegEx = class java.lang.String[2]
+    String[0] = ".*_(Stub|Tie)$"
+    String[1] = ".*_(\p{XDigit}){8}$"
+  transformExclusionPatterns = class java.util.regex.Pattern[2]
+    Pattern[0] = class java.util.regex.Pattern@23c86197
+      UNIX_LINES = 1
+      CASE_INSENSITIVE = 2
+      COMMENTS = 4
+      MULTILINE = 8
+      LITERAL = 16
+      DOTALL = 32
+      UNICODE_CASE = 64
+      CANON_EQ = 128
+      UNICODE_CHARACTER_CLASS = 256
+      ALL_FLAGS = "/* Could not access ALL_FLAGS */"
+      serialVersionUID = "/* Could not access serialVersionUID */"
+      pattern = "/* Could not access pattern */"
+      flags = "/* Could not access flags */"
+      flags0 = "/* Could not access flags0 */"
+      compiled = "/* Could not access compiled */"
+      normalizedPattern = "/* Could not access normalizedPattern */"
+      root = "/* Could not access root */"
+      matchRoot = "/* Could not access matchRoot */"
+      buffer = "/* Could not access buffer */"
+      predicate = "/* Could not access predicate */"
+      namedGroups = "/* Could not access namedGroups */"
+      groupNodes = "/* Could not access groupNodes */"
+      topClosureNodes = "/* Could not access topClosureNodes */"
+      localTCNCount = "/* Could not access localTCNCount */"
+      hasGroupRef = "/* Could not access hasGroupRef */"
+      temp = "/* Could not access temp */"
+      capturingGroupCount = "/* Could not access capturingGroupCount */"
+      localCount = "/* Could not access localCount */"
+      cursor = "/* Could not access cursor */"
+      patternLength = "/* Could not access patternLength */"
+      hasSupplementary = "/* Could not access hasSupplementary */"
+      MAX_REPS = "/* Could not access MAX_REPS */"
+      accept = "/* Could not access accept */"
+      lastAccept = "/* Could not access lastAccept */"
+      $assertionsDisabled = "/* Could not access $assertionsDisabled */"
+    Pattern[1] = class java.util.regex.Pattern@1e31ef8
+      UNIX_LINES = 1
+      CASE_INSENSITIVE = 2
+      COMMENTS = 4
+      MULTILINE = 8
+      LITERAL = 16
+      DOTALL = 32
+      UNICODE_CASE = 64
+      CANON_EQ = 128
+      UNICODE_CHARACTER_CLASS = 256
+      ALL_FLAGS = "/* Could not access ALL_FLAGS */"
+      serialVersionUID = "/* Could not access serialVersionUID */"
+      pattern = "/* Could not access pattern */"
+      flags = "/* Could not access flags */"
+      flags0 = "/* Could not access flags0 */"
+      compiled = "/* Could not access compiled */"
+      normalizedPattern = "/* Could not access normalizedPattern */"
+      root = "/* Could not access root */"
+      matchRoot = "/* Could not access matchRoot */"
+      buffer = "/* Could not access buffer */"
+      predicate = "/* Could not access predicate */"
+      namedGroups = "/* Could not access namedGroups */"
+      groupNodes = "/* Could not access groupNodes */"
+      topClosureNodes = "/* Could not access topClosureNodes */"
+      localTCNCount = "/* Could not access localTCNCount */"
+      hasGroupRef = "/* Could not access hasGroupRef */"
+      temp = "/* Could not access temp */"
+      capturingGroupCount = "/* Could not access capturingGroupCount */"
+      localCount = "/* Could not access localCount */"
+      cursor = "/* Could not access cursor */"
+      patternLength = "/* Could not access patternLength */"
+      hasSupplementary = "/* Could not access hasSupplementary */"
+      MAX_REPS = "/* Could not access MAX_REPS */"
+      accept = "/* Could not access accept */"
+      lastAccept = "/* Could not access lastAccept */"
+      $assertionsDisabled = "/* Could not access $assertionsDisabled */"
+

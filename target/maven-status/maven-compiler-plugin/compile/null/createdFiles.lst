@@ -1,0 +1,7 @@
+com/cruznobre/rest/config/DatabaseHC.class
+com/cruznobre/rest/v1/RestApplication.class
+com/cruznobre/rest/core/persistence/BrandDAO.class
+META-INF/panache-archive.marker
+com/cruznobre/rest/v1/dto/ShowRoomDTO.class
+com/cruznobre/rest/v1/dto/BrandDTO.class
+com/cruznobre/rest/v1/resources/BrandResource.class

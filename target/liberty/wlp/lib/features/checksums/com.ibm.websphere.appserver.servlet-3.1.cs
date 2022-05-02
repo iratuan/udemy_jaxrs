@@ -1,0 +1,21 @@
+#Sun May 01 11:00:37 BRT 2022
+lib/com.ibm.ws.session_1.0.63.jar=81ad3191ac9b13e8d97d5580a361cb47
+lib/com.ibm.ws.webcontainer_1.1.63.jar=224a7c6caae346893865f9398a452da5
+lib/com.ibm.ws.http.plugin.merge_1.0.63.jar=a85b8283fae526cf77fae058c3cec9ef
+lib/com.ibm.ws.webserver.plugin.runtime_1.0.63.jar=c20d228e96e82333bcbbeb308abf6b3d
+lib/com.ibm.ws.app.manager.war_1.0.63.jar=0c17bd55bcfb4f5c6e37ea4d907883f1
+lib/com.ibm.ws.webcontainer.cors_1.0.63.jar=aafd9ffb584c8b5e233898b16a05f0c4
+lib/com.ibm.ws.org.apache.commons.fileupload_1.0.63.jar=c962c861b7719448cffad351fabab054
+lib/com.ibm.ws.webserver.plugin.utility_1.0.63.jar=ea3cb38ae0f00ee4a24acf83c4a3bfbd
+bin/pluginUtility=c88b7d31fb0e2890669fc889792cf684
+lib/com.ibm.ws.org.apache.commons.io_1.0.63.jar=61e8812476d2c36bfb84c0a7d944ed18
+lib/com.ibm.websphere.security_1.1.63.jar=99c5de4ecc0fddb53cb62247f9e42fab
+dev/api/ibm/com.ibm.websphere.appserver.api.servlet_1.1.63.jar=1d2cf0eda1ff1827f86fef9337c89211
+dev/api/ibm/javadoc/com.ibm.websphere.appserver.api.servlet_1.1-javadoc.zip=ad0893b1276c5d64803687f6f8cc6151
+bin/tools/ws-webserverPluginutil.jar=7a78333f27faf285d2e10f59ff7b58c4
+lib/com.ibm.ws.webcontainer.servlet.3.1_1.0.63.jar=989bf385c97ba7311b986d4975e1a74f
+lib/com.ibm.ws.webserver.plugin.runtime.interfaces_1.0.63.jar=f6e1349b5fea77e0596076b81036d165
+bin/pluginUtility.bat=c456259c61849720c0b61e3934a03207
+lib/features/com.ibm.websphere.appserver.servlet-3.1.mf=6408541d0fde3423db69df5dc8c28995
+lib/com.ibm.ws.managedobject_1.0.63.jar=0300eaa9e5bf6c5163bc0d44470651a1
+lib/com.ibm.ws.webcontainer.servlet.3.1.factories_1.0.63.jar=ec8081328f917c6e2bc6f06439a49d3c
