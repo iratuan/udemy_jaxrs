@@ -1,8 +1,0 @@
-
- Index  Count  Time of first Occurrence    Time of last Occurrence     Exception SourceId ProbeId
-------+------+---------------------------+---------------------------+---------------------------
-     0      2 02/05/2022 12:12:57:810 BRT 02/05/2022 12:13:02:153 BRT org.jboss.weld.exceptions.DefinitionException com.ibm.ws.container.service.state.internal.ApplicationStateManager 54
-                                                                            - /Users/iratuan/Documents/Projetos/estudos/udemy_jaxrs/target/liberty/wlp/usr/servers/defaultServer/logs/ffdc/ffdc_22.05.02_12.12.57.0.log
-     1      2 02/05/2022 12:12:57:852 BRT 02/05/2022 12:13:02:154 BRT com.ibm.ws.container.service.state.StateChangeException com.ibm.ws.app.manager.module.internal.SimpleDeployedAppInfoBase 548
-                                                                            - /Users/iratuan/Documents/Projetos/estudos/udemy_jaxrs/target/liberty/wlp/usr/servers/defaultServer/logs/ffdc/ffdc_22.05.02_12.12.57.1.log
-------+------+---------------------------+---------------------------+---------------------------

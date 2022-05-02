@@ -2,6 +2,7 @@ package com.cruznobre.rest.v1.resources;
 
 import com.cruznobre.rest.core.entity.Brand;
 import com.cruznobre.rest.core.service.BrandService;
+import com.cruznobre.rest.shared.converter.BrandConverter;
 import com.cruznobre.rest.v1.dto.BrandDTO;
 import jakarta.inject.Inject;
 import jakarta.validation.constraints.NotNull;
@@ -26,9 +27,9 @@ public class BrandResource {
     @POST
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response insertBrand(@RequestBody @NotNull Brand brand){
-        Brand brandInserted = service.insert(brand);
-        return Response.ok(brandInserted).build();
+    public Response insertBrand(@RequestBody @NotNull BrandDTO dto){
+       Brand brandInserted = service.insert(BrandConverter.converter(dto));
+        return Response.ok(BrandConverter.converter(brandInserted)).build();
     }
 
     @PUT

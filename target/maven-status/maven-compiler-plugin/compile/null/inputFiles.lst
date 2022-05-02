@@ -8,3 +8,4 @@
 /Users/iratuan/Documents/Projetos/estudos/udemy_jaxrs/src/main/java/com/cruznobre/rest/v1/resources/ShowRoomResource.java
 /Users/iratuan/Documents/Projetos/estudos/udemy_jaxrs/src/main/java/com/cruznobre/rest/v1/RestApplication.java
 /Users/iratuan/Documents/Projetos/estudos/udemy_jaxrs/src/main/java/com/cruznobre/rest/core/persistence/GenericDAO.java
+/Users/iratuan/Documents/Projetos/estudos/udemy_jaxrs/src/main/java/com/cruznobre/rest/shared/converter/BrandConverter.java
