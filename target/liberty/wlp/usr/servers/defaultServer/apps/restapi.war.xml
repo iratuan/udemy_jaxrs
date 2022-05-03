@@ -80,5 +80,7 @@
     <file sourceOnDisk="/Users/iratuan/.m2/repository/io/quarkus/arc/arc/2.8.2.Final/arc-2.8.2.Final.jar" targetInArchive="/WEB-INF/lib/arc-2.8.2.Final.jar"/>
     <file sourceOnDisk="/Users/iratuan/.m2/repository/org/eclipse/microprofile/context-propagation/microprofile-context-propagation-api/1.2/microprofile-context-propagation-api-1.2.jar" targetInArchive="/WEB-INF/lib/microprofile-context-propagation-api-1.2.jar"/>
     <file sourceOnDisk="/Users/iratuan/.m2/repository/io/quarkus/quarkus-panache-common/2.8.2.Final/quarkus-panache-common-2.8.2.Final.jar" targetInArchive="/WEB-INF/lib/quarkus-panache-common-2.8.2.Final.jar"/>
+    <file sourceOnDisk="/Users/iratuan/.m2/repository/org/apache/commons/commons-lang3/3.12.0/commons-lang3-3.12.0.jar" targetInArchive="/WEB-INF/lib/commons-lang3-3.12.0.jar"/>
+    <file sourceOnDisk="/Users/iratuan/.m2/repository/org/modelmapper/modelmapper/3.1.0/modelmapper-3.1.0.jar" targetInArchive="/WEB-INF/lib/modelmapper-3.1.0.jar"/>
     <file sourceOnDisk="/Users/iratuan/Documents/Projetos/estudos/udemy_jaxrs/target/tmp/META-INF/MANIFEST.MF" targetInArchive="/META-INF/MANIFEST.MF"/>
 </archive>

@@ -53,6 +53,21 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/cruznobre/rest/core/service/BrandService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/cruznobre/rest/shared/converter/BrandConverter.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/cruznobre/rest/shared/converter/GenericConverter.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/com/cruznobre/rest/v1/HelloResource.java">
           <value>
             <set />
