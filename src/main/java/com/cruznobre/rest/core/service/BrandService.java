@@ -20,8 +20,8 @@ public class BrandService {
         return dao.listAll();
     }
 
-    public Brand insert(@NotNull Brand brand) throws PersistenceExceptionCustom {
-        return dao.save(brand);
+    public Brand insert(@NotNull Brand entity) throws PersistenceExceptionCustom {
+        return dao.save(entity);
     }
 
     public Brand update(Brand entity) throws PersistenceExceptionCustom {
@@ -29,10 +29,9 @@ public class BrandService {
     }
 
     public void delete(Long id) throws PersistenceExceptionCustom {
-        Brand brand = dao.get(id);
-        if(brand != null){
-            dao.delete(brand);
+        Brand entity = dao.get(id);
+        if(entity != null){
+            dao.delete(entity);
         }
-
     }
 }

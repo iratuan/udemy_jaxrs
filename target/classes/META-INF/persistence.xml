@@ -7,6 +7,7 @@
     <persistence-unit name="default" transaction-type="JTA">
         <jta-data-source>jdbc/datasource</jta-data-source>
         <class>com.cruznobre.rest.core.entity.Brand</class>
+        <class>com.cruznobre.rest.core.entity.Product</class>
         <properties>
             <property name="eclipselink.ddl-generation" value="none"/>
             <property name="eclipselink.ddl-generation.output-mode" value="both" />

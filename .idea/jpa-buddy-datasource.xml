@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JpbDataSourceConfig">
+    <data-sources>
+      <data-source id="3da33714-dab7-4024-8d2e-dcc35d335cf7" name="udemy_jaxrs" url="jdbc:postgresql://localhost:5555/showroom" driverClass="org.postgresql.Driver" />
+    </data-sources>
+  </component>
+</project>

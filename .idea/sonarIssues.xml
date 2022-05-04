@@ -33,6 +33,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/cruznobre/rest/core/entity/Product.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/com/cruznobre/rest/core/persistence/AbstractDAO.java">
           <value>
             <set />
@@ -48,6 +53,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/cruznobre/rest/core/persistence/ProductDAO.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/com/cruznobre/rest/core/repository/BrandRepository.java">
           <value>
             <set />
@@ -58,12 +68,42 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/cruznobre/rest/core/service/ProductService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/cruznobre/rest/shared/converter/AbstractConverter.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/cruznobre/rest/shared/converter/BaseConverter.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/com/cruznobre/rest/shared/converter/BrandConverter.java">
           <value>
             <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/main/java/com/cruznobre/rest/shared/converter/GenericConverter.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/cruznobre/rest/shared/converter/IConverter.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/cruznobre/rest/shared/converter/ProductConverter.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/cruznobre/rest/shared/dto/ProductDTO.java">
           <value>
             <set />
           </value>
@@ -89,6 +129,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/main/java/com/cruznobre/rest/v1/resources/HelloResource.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/cruznobre/rest/v1/resources/ProductResource.java">
           <value>
             <set />
           </value>
