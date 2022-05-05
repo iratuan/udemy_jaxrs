@@ -34,6 +34,24 @@ public class ProductResource {
         } catch (PersistenceException | PersistenceExceptionCustom e) {
             e.printStackTrace();
             return Response.status(Status.INTERNAL_SERVER_ERROR).build();
+        } catch (NotFoundException e) {
+            e.printStackTrace();
+            return Response.status(Status.NOT_FOUND).build();
+        }
+    }
+
+    @GET
+    @Path("/{id}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getProduct(@NotNull @PathParam("id") Long id) {
+        try {
+            return Response.ok(ProductConverter.toDTO(service.get(id))).build();
+        } catch (PersistenceException | PersistenceExceptionCustom e) {
+            e.printStackTrace();
+            return Response.status(Status.INTERNAL_SERVER_ERROR).build();
+        } catch (NotFoundException e) {
+            e.printStackTrace();
+            return Response.status(Status.NOT_FOUND).build();
         }
     }
 
@@ -46,6 +64,9 @@ public class ProductResource {
         } catch (PersistenceExceptionCustom e) {
             e.printStackTrace();
             return Response.status(Status.INTERNAL_SERVER_ERROR).build();
+        } catch (NotFoundException e) {
+            e.printStackTrace();
+            return Response.status(Status.NOT_FOUND).build();
         }
         return Response.ok(dto).build();
     }
@@ -60,6 +81,9 @@ public class ProductResource {
         } catch (PersistenceExceptionCustom e) {
             e.printStackTrace();
             return Response.status(Status.INTERNAL_SERVER_ERROR).build();
+        } catch (NotFoundException e){
+            e.printStackTrace();
+            return Response.status(Status.NOT_FOUND).build();
         }
         return Response.ok(dto).build();
     }

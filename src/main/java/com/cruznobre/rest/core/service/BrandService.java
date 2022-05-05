@@ -20,6 +20,10 @@ public class BrandService {
         return dao.listAll();
     }
 
+    public Brand get(Long id) throws PersistenceException, PersistenceExceptionCustom {
+        return dao.get(id);
+    }
+
     public Brand insert(@NotNull Brand entity) throws PersistenceExceptionCustom {
         return dao.save(entity);
     }

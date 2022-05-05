@@ -20,6 +20,14 @@ public class ProductService {
         return dao.listAll();
     }
 
+    public Product get(Long id) throws PersistenceException, PersistenceExceptionCustom {
+        return dao.get(id);
+    }
+
+    public List<Product> listAllByBrand(Long id) throws PersistenceException, PersistenceExceptionCustom {
+        return dao.listAllByBrand(id);
+    }
+
     public Product insert(@NotNull Product entity) throws PersistenceExceptionCustom {
         return dao.save(entity);
     }
