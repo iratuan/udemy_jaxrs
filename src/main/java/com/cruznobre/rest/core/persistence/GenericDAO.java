@@ -1,11 +1,10 @@
 package com.cruznobre.rest.core.persistence;
 
+import com.cruznobre.rest.core.exception.ExistentEntityInPersistenceException;
+import com.cruznobre.rest.core.exception.PersistenceExceptionCustom;
 import jakarta.persistence.*;
 
 import java.util.List;
-
-import com.cruznobre.rest.core.exception.ExistentEntityInPersistenceException;
-import com.cruznobre.rest.core.exception.PersistenceExceptionCustom;
 
 public class GenericDAO<T, ID> {
 
@@ -23,13 +22,16 @@ public class GenericDAO<T, ID> {
         return factory.createEntityManager();
     }
 
-    public List<T> listAll() throws PersistenceException, PersistenceExceptionCustom {
+    public List<T> listAll(Integer page, Integer size) throws PersistenceException, PersistenceExceptionCustom {
         try {
             StringBuilder jpqlSb = new StringBuilder();
             jpqlSb.append("select e from ")
                     .append(this.entityClass.getName())
                     .append(" e");
-            return this.getEntityManager().createQuery(jpqlSb.toString(), this.entityClass).getResultList();
+            TypedQuery<T> query = this.getEntityManager().createQuery(jpqlSb.toString(), this.entityClass);
+            query.setFirstResult((page - 1 ) * size);
+            query.setMaxResults(size);
+            return query.getResultList();
         } catch (PersistenceException pe) {
             throw new PersistenceExceptionCustom("Erro ao consultar no banco de dados ", pe);
         } catch (RuntimeException re) {

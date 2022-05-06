@@ -16,8 +16,8 @@ public class ProductService {
     @Inject
     private ProductDAO dao;
 
-    public List<Product> listAll() throws PersistenceException, PersistenceExceptionCustom {
-        return dao.listAll();
+    public List<Product> listAll(String category, Integer page, Integer size) throws PersistenceException, PersistenceExceptionCustom {
+        return dao.listAll(category, page, size);
     }
 
     public Product get(Long id) throws PersistenceException, PersistenceExceptionCustom {

@@ -16,8 +16,8 @@ public class BrandService {
     @Inject
     private BrandDAO dao;
 
-    public List<Brand> listAll() throws PersistenceException, PersistenceExceptionCustom {
-        return dao.listAll();
+    public List<Brand> listAll(Integer page, Integer size) throws PersistenceException, PersistenceExceptionCustom {
+        return dao.listAll(page, size);
     }
 
     public Brand get(Long id) throws PersistenceException, PersistenceExceptionCustom {

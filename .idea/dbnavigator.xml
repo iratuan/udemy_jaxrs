@@ -28,11 +28,22 @@
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="3538935b-f2de-4ab6-aeb4-e18b4c4623d2">
-      <console name="connLocalhostShowroom" type="STANDARD" schema="information_schema" session="Main" />
+      <console name="connLocalhostShowroom" type="STANDARD" schema="information_schema" session="Main"><![CDATA[select
+    p.brand_id,
+    p.category,
+    p."id",
+    p."name",
+    p.price
+from
+    public.products p;
+
+select * from public.brands]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files />
+    <open-files>
+      <object connection-id="3538935b-f2de-4ab6-aeb4-e18b4c4623d2" object-ref="consoles/connLocalhostShowroom" />
+    </open-files>
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="3538935b-f2de-4ab6-aeb4-e18b4c4623d2" />

@@ -24,10 +24,12 @@ public class ProductResource {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public Response listAllProducts() {
+    public Response listAllProducts(@QueryParam("category") String category,
+                                    @QueryParam("page") Integer page,
+                                    @QueryParam("size") Integer size) {
         try {
             List<ProductDTO> list = new ArrayList<>();
-            service.listAll().forEach(b -> {
+            service.listAll(category, page, size).forEach(b -> {
                 list.add(ProductConverter.toDTO(b));
             });
             return Response.ok(list).build();
@@ -37,6 +39,22 @@ public class ProductResource {
         } catch (NotFoundException e) {
             e.printStackTrace();
             return Response.status(Status.NOT_FOUND).build();
+        }
+    }
+
+    @GET
+    @Path("/by-brand/{brandId}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response listAllProductsByBrand(@NotNull @PathParam("brandId") Long brandId) {
+        try {
+            List<ProductDTO> list = new ArrayList<>();
+            service.listAllByBrand(brandId).forEach(p -> {
+                list.add(ProductConverter.toDTO(p));
+            });
+            return Response.ok(list).build();
+        } catch (PersistenceException | PersistenceExceptionCustom e) {
+            e.printStackTrace();
+            return Response.status(Status.INTERNAL_SERVER_ERROR).build();
         }
     }
 
@@ -81,7 +99,7 @@ public class ProductResource {
         } catch (PersistenceExceptionCustom e) {
             e.printStackTrace();
             return Response.status(Status.INTERNAL_SERVER_ERROR).build();
-        } catch (NotFoundException e){
+        } catch (NotFoundException e) {
             e.printStackTrace();
             return Response.status(Status.NOT_FOUND).build();
         }
