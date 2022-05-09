@@ -39,8 +39,8 @@ public class ProductResource {
             List<ProductDTO> list = new ArrayList<>();
             service.listAll(category, page, pageSize).forEach(p -> {
                 ProductDTO dto = ProductConverter.toDTO(p);
-                dto.setLinks(getLinkBags(uriInfo, dto));
-                dto.getBrand().setLinks(getLinkBags(uriInfo, dto.getBrand()));
+                dto.setLinks(getLinks(uriInfo, dto));
+                dto.getBrand().setLinks(getLinks(uriInfo, dto.getBrand()));
                 list.add(dto);
             });
             LinkBag self = new LinkBag(uriInfo.getAbsolutePath().toString(), "products");
@@ -71,8 +71,8 @@ public class ProductResource {
             List<ProductDTO> list = new ArrayList<>();
             service.listAllByBrand(brandId).forEach(p -> {
                 ProductDTO dto = ProductConverter.toDTO(p);
-                dto.setLinks(getLinkBags(uriInfo, dto));
-                dto.getBrand().setLinks(getLinkBags(uriInfo, dto.getBrand()));
+                dto.setLinks(getLinks(uriInfo, dto));
+                dto.getBrand().setLinks(getLinks(uriInfo, dto.getBrand()));
                 list.add(dto);
             });
             return Response.ok(list).build();
@@ -88,8 +88,8 @@ public class ProductResource {
     public Response getProduct(@NotNull @PathParam("id") Long id, @Context UriInfo uriInfo) {
         try {
             ProductDTO dto = ProductConverter.toDTO(service.get(id));
-            dto.getBrand().setLinks(getLinkBags(uriInfo, dto.getBrand()));
-            dto.setLinks(getLinkBags(uriInfo, dto));
+            dto.getBrand().setLinks(getLinks(uriInfo, dto.getBrand()));
+            dto.setLinks(getLinks(uriInfo, dto));
             return Response.ok(dto).build();
         } catch (PersistenceException | PersistenceExceptionCustom e) {
             e.printStackTrace();
@@ -106,7 +106,8 @@ public class ProductResource {
     public Response insertProduct(@RequestBody @NotNull ProductDTO dto, @Context UriInfo uriInfo) {
         try {
             dto = ProductConverter.toDTO(service.insert(ProductConverter.toEntity(dto)));
-            dto.setLinks(getLinkBags(uriInfo, dto));
+            dto.getBrand().setLinks(getLinks(uriInfo, dto.getBrand()));
+            dto.setLinks(getLinks(uriInfo, dto));
         } catch (PersistenceExceptionCustom e) {
             e.printStackTrace();
             return Response.status(Status.INTERNAL_SERVER_ERROR).build();
@@ -126,8 +127,8 @@ public class ProductResource {
                                   @Context UriInfo uriInfo) {
         try {
             dto = ProductConverter.toDTO(service.update(ProductConverter.toEntity(dto)));
-            dto.getBrand().setLinks(getLinkBags(uriInfo, dto.getBrand()));
-            dto.setLinks(getLinkBags(uriInfo, dto));
+            dto.getBrand().setLinks(getLinks(uriInfo, dto.getBrand()));
+            dto.setLinks(getLinks(uriInfo, dto));
         } catch (PersistenceExceptionCustom e) {
             e.printStackTrace();
             return Response.status(Status.INTERNAL_SERVER_ERROR).build();
@@ -149,7 +150,7 @@ public class ProductResource {
         return Response.status(Status.NO_CONTENT).build();
     }
 
-    private List<LinkBag> getLinkBags(UriInfo uriInfo, ProductDTO p) {
+    private List<LinkBag> getLinks(UriInfo uriInfo, ProductDTO p) {
         LinkBag self = new LinkBag(uriInfo.getBaseUri() + "products/" + p.getId(), "self");
         String uriProducts = uriInfo.getBaseUri() + "products/by-brand/" + p.getBrand().getId();
         LinkBag products = new LinkBag(uriProducts, "products");
@@ -159,7 +160,7 @@ public class ProductResource {
         return links;
     }
 
-    private List<LinkBag> getLinkBags(UriInfo uriInfo, BrandDTO b) {
+    private List<LinkBag> getLinks(UriInfo uriInfo, BrandDTO b) {
         LinkBag self = new LinkBag(uriInfo.getBaseUri() + "brand/" + b.getId(), "self");
         String uriProducts = uriInfo.getBaseUri() + "products/by-brand/" + b.getId();
         LinkBag products = new LinkBag(uriProducts, "products");

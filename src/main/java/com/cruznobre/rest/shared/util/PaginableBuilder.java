@@ -1,18 +1,17 @@
 package com.cruznobre.rest.shared.util;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class PaginableBuilder {
-        private List<Object> resources = new ArrayList<>();
+        private List<Object> items = new ArrayList<>();
         private List<LinkBag> links;
         private Long total;
         private int page;
         private int pageSize;
 
-        public PaginableBuilder(List<Object> resources) {
-            this.resources = resources;
+        public PaginableBuilder(List<Object> items) {
+            this.items = (List<Object>) items.get(0);
         }
 
         public PaginableBuilder withLinks(List<LinkBag> links){
@@ -37,10 +36,10 @@ public class PaginableBuilder {
 
         public PaginableBag build(){
             return new PaginableBag(
-                    Collections.singletonList(resources),
+                    items,
                     links,
                     total,
-                    pageSize,
-                    page);
+                    page,
+                    pageSize);
         }
     }

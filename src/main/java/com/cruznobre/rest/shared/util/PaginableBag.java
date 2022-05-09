@@ -9,7 +9,7 @@ import java.util.List;
 @Getter
 @Schema(name = "Paginable")
 public class PaginableBag {
-    private List<Object> resources = new ArrayList<>();
+    private List<Object> items = new ArrayList<>();
     private List<LinkBag> links;
     private Long total;
     private int page;
@@ -18,12 +18,12 @@ public class PaginableBag {
     private PaginableBag(){}
 
     public PaginableBag(
-            List<Object> resources,
+            List<Object> items,
             List<LinkBag> links,
             Long total,
             int page,
             int pageSize) {
-        this.resources = resources;
+        this.items = items;
         this.links = links;
         this.total = total;
         this.pageSize = pageSize;

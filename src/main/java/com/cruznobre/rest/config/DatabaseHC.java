@@ -26,7 +26,7 @@ public class DatabaseHC implements HealthCheck {
         } catch (SQLException e) {
             return HealthCheckResponse.down("databaseReady");
         }
-      
+
     }
 
 }
