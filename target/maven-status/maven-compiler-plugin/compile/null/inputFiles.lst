@@ -1,4 +1,6 @@
 /Users/iratuan/Documents/Projetos/estudos/udemy_jaxrs/src/main/java/com/cruznobre/rest/core/persistence/BrandDAO.java
+/Users/iratuan/Documents/Projetos/estudos/udemy_jaxrs/src/main/java/com/cruznobre/rest/shared/dto/HateoasBag.java
+/Users/iratuan/Documents/Projetos/estudos/udemy_jaxrs/src/main/java/com/cruznobre/rest/shared/dto/PaginableBag.java
 /Users/iratuan/Documents/Projetos/estudos/udemy_jaxrs/src/main/java/com/cruznobre/rest/core/persistence/ProductDAO.java
 /Users/iratuan/Documents/Projetos/estudos/udemy_jaxrs/src/main/java/com/cruznobre/rest/shared/dto/ProductDTO.java
 /Users/iratuan/Documents/Projetos/estudos/udemy_jaxrs/src/main/java/com/cruznobre/rest/shared/dto/ShowRoomDTO.java

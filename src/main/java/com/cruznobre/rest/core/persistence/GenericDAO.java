@@ -22,6 +22,23 @@ public class GenericDAO<T, ID> {
         return factory.createEntityManager();
     }
 
+    public Long getTotal() throws PersistenceExceptionCustom {
+        try {
+            StringBuilder jpqlSb = new StringBuilder();
+            jpqlSb.append("select count(e) from ")
+                    .append(this.entityClass.getName())
+                    .append(" e");
+            TypedQuery<T> query = this.getEntityManager().createQuery(jpqlSb.toString(), this.entityClass);
+
+            return (Long) query.getSingleResult();
+        } catch (PersistenceException pe) {
+            throw new PersistenceExceptionCustom("Erro ao consultar no banco de dados ", pe);
+        } catch (RuntimeException re) {
+            throw new PersistenceExceptionCustom("Erro ao generalizado ao executar comando sql ", re);
+        }
+    }
+
+
     public List<T> listAll(Integer page, Integer size) throws PersistenceException, PersistenceExceptionCustom {
         try {
             StringBuilder jpqlSb = new StringBuilder();

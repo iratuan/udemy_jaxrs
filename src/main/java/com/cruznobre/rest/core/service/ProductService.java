@@ -23,6 +23,10 @@ public class ProductService {
     public Product get(Long id) throws PersistenceException, PersistenceExceptionCustom {
         return dao.get(id);
     }
+    public Long getTotal() throws PersistenceExceptionCustom {
+        return dao.getTotal();
+    }
+
 
     public List<Product> listAllByBrand(Long id) throws PersistenceException, PersistenceExceptionCustom {
         return dao.listAllByBrand(id);

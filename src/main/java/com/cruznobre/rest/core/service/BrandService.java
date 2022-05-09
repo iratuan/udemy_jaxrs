@@ -24,6 +24,10 @@ public class BrandService {
         return dao.get(id);
     }
 
+    public Long getTotal() throws PersistenceExceptionCustom {
+        return dao.getTotal();
+    }
+
     public Brand insert(@NotNull Brand entity) throws PersistenceExceptionCustom {
         return dao.save(entity);
     }

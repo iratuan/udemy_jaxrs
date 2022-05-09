@@ -38,11 +38,12 @@ from
     public.products p;
 
 select * from public.brands]]></console>
+      <console name="connLocalhostShowroom 1" type="STANDARD" schema="information_schema" session="Main"><![CDATA[select * from public.products]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
     <open-files>
-      <object connection-id="3538935b-f2de-4ab6-aeb4-e18b4c4623d2" object-ref="consoles/connLocalhostShowroom" />
+      <object connection-id="3538935b-f2de-4ab6-aeb4-e18b4c4623d2" object-ref="consoles/connLocalhostShowroom 1" />
     </open-files>
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">

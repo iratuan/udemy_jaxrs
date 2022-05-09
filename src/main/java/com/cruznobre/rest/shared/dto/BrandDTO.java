@@ -1,11 +1,14 @@
 package com.cruznobre.rest.shared.dto;
 
-import org.eclipse.microprofile.openapi.annotations.media.Schema;
-
+import com.cruznobre.rest.shared.util.LinkBag;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.eclipse.microprofile.openapi.annotations.media.Schema;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 @Setter
@@ -15,4 +18,5 @@ import lombok.Setter;
 public class BrandDTO {
     private Long id;
     private String name;
+    List<LinkBag> links = new ArrayList<>();
 }
