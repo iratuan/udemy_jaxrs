@@ -7,6 +7,7 @@ import com.cruznobre.rest.shared.dto.BrandDTO;
 import com.cruznobre.rest.shared.dto.ProductDTO;
 import com.cruznobre.rest.shared.util.LinkBag;
 import com.cruznobre.rest.shared.util.PaginableBag;
+import com.cruznobre.rest.shared.util.PaginableBuilder;
 import jakarta.inject.Inject;
 import jakarta.persistence.PersistenceException;
 import jakarta.validation.constraints.NotNull;
@@ -31,26 +32,26 @@ public class ProductResource {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Response listAllProducts(@QueryParam("category") String category,
-                                    @QueryParam("page") Integer page,
-                                    @QueryParam("size") Integer pageSize,
+                                    @NotNull @QueryParam("page") Integer page,
+                                    @NotNull @QueryParam("size") Integer pageSize,
                                     @Context UriInfo uriInfo) {
         try {
             List<ProductDTO> list = new ArrayList<>();
             service.listAll(category, page, pageSize).forEach(p -> {
                 ProductDTO dto = ProductConverter.toDTO(p);
-                dto.setLinks(getLinkBags(uriInfo, dto.getBrand()));
-                dto.getBrand().setLinks(getLinkBags(uriInfo, dto));
+                dto.setLinks(getLinkBags(uriInfo, dto));
+                dto.getBrand().setLinks(getLinkBags(uriInfo, dto.getBrand()));
                 list.add(dto);
             });
-            LinkBag self = new LinkBag(uriInfo.getAbsolutePath().toString(),"products");
+            LinkBag self = new LinkBag(uriInfo.getAbsolutePath().toString(), "products");
             List<LinkBag> links = new ArrayList<>();
             links.add(self);
-            PaginableBag paginableBag = new PaginableBag(
-                    Collections.singletonList(list),
-                    links,
-                    service.getTotal(),
-                    page,
-                    pageSize);
+            PaginableBag paginableBag = new PaginableBuilder(Collections.singletonList(list))
+                    .withLinks(links)
+                    .withTotalOfRecords(service.getTotal())
+                    .inPage(page)
+                    .withPageSize(pageSize)
+                    .build();
             return Response.ok(paginableBag).build();
         } catch (PersistenceException | PersistenceExceptionCustom e) {
             e.printStackTrace();
@@ -70,7 +71,8 @@ public class ProductResource {
             List<ProductDTO> list = new ArrayList<>();
             service.listAllByBrand(brandId).forEach(p -> {
                 ProductDTO dto = ProductConverter.toDTO(p);
-                dto.setLinks(getLinkBags(uriInfo));
+                dto.setLinks(getLinkBags(uriInfo, dto));
+                dto.getBrand().setLinks(getLinkBags(uriInfo, dto.getBrand()));
                 list.add(dto);
             });
             return Response.ok(list).build();
@@ -86,7 +88,8 @@ public class ProductResource {
     public Response getProduct(@NotNull @PathParam("id") Long id, @Context UriInfo uriInfo) {
         try {
             ProductDTO dto = ProductConverter.toDTO(service.get(id));
-            dto.setLinks(getLinkBags(uriInfo));
+            dto.getBrand().setLinks(getLinkBags(uriInfo, dto.getBrand()));
+            dto.setLinks(getLinkBags(uriInfo, dto));
             return Response.ok(dto).build();
         } catch (PersistenceException | PersistenceExceptionCustom e) {
             e.printStackTrace();
@@ -103,7 +106,7 @@ public class ProductResource {
     public Response insertProduct(@RequestBody @NotNull ProductDTO dto, @Context UriInfo uriInfo) {
         try {
             dto = ProductConverter.toDTO(service.insert(ProductConverter.toEntity(dto)));
-            dto.setLinks(getLinkBags(uriInfo));
+            dto.setLinks(getLinkBags(uriInfo, dto));
         } catch (PersistenceExceptionCustom e) {
             e.printStackTrace();
             return Response.status(Status.INTERNAL_SERVER_ERROR).build();
@@ -123,7 +126,8 @@ public class ProductResource {
                                   @Context UriInfo uriInfo) {
         try {
             dto = ProductConverter.toDTO(service.update(ProductConverter.toEntity(dto)));
-            dto.setLinks(getLinkBags(uriInfo));
+            dto.getBrand().setLinks(getLinkBags(uriInfo, dto.getBrand()));
+            dto.setLinks(getLinkBags(uriInfo, dto));
         } catch (PersistenceExceptionCustom e) {
             e.printStackTrace();
             return Response.status(Status.INTERNAL_SERVER_ERROR).build();
@@ -145,9 +149,9 @@ public class ProductResource {
         return Response.status(Status.NO_CONTENT).build();
     }
 
-    private List<LinkBag> getLinkBags(UriInfo uriInfo, BrandDTO b) {
-        LinkBag self = new LinkBag(uriInfo.getAbsolutePath().toString() + "/" + b.getId(), "self");
-        String uriProducts = uriInfo.getBaseUri() + "products/by-brand/"+ b.getId();
+    private List<LinkBag> getLinkBags(UriInfo uriInfo, ProductDTO p) {
+        LinkBag self = new LinkBag(uriInfo.getBaseUri() + "products/" + p.getId(), "self");
+        String uriProducts = uriInfo.getBaseUri() + "products/by-brand/" + p.getBrand().getId();
         LinkBag products = new LinkBag(uriProducts, "products");
         List<LinkBag> links = new ArrayList<>();
         links.add(self);
@@ -155,11 +159,13 @@ public class ProductResource {
         return links;
     }
 
-    private List<LinkBag> getLinkBags(UriInfo uriInfo, ProductDTO p) {
-        String uriBrand = uriInfo.getBaseUri() + "brands/" + p.getBrand().getId();
-        List<LinkBag> linksBrand = new ArrayList<>();
-        LinkBag linkBrand = new LinkBag(uriBrand, "brands");
-        linksBrand.add(linkBrand);
-        return linksBrand;
+    private List<LinkBag> getLinkBags(UriInfo uriInfo, BrandDTO b) {
+        LinkBag self = new LinkBag(uriInfo.getBaseUri() + "brand/" + b.getId(), "self");
+        String uriProducts = uriInfo.getBaseUri() + "products/by-brand/" + b.getId();
+        LinkBag products = new LinkBag(uriProducts, "products");
+        List<LinkBag> links = new ArrayList<>();
+        links.add(self);
+        links.add(products);
+        return links;
     }
 }

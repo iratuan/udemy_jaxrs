@@ -143,6 +143,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/cruznobre/rest/shared/util/PaginableBuilder.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/com/cruznobre/rest/shared/util/ResourceBag.java">
           <value>
             <set />

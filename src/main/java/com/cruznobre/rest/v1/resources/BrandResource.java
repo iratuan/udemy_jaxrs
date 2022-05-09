@@ -7,6 +7,7 @@ import com.cruznobre.rest.shared.converter.BrandConverter;
 import com.cruznobre.rest.shared.dto.BrandDTO;
 import com.cruznobre.rest.shared.util.LinkBag;
 import com.cruznobre.rest.shared.util.PaginableBag;
+import com.cruznobre.rest.shared.util.PaginableBuilder;
 import jakarta.inject.Inject;
 import jakarta.persistence.PersistenceException;
 import jakarta.validation.constraints.NotNull;
@@ -34,8 +35,8 @@ public class BrandResource {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public Response listAllBrands(@QueryParam("page") Integer page,
-                                  @QueryParam("size") Integer pageSize,
+    public Response listAllBrands(@NotNull @QueryParam("page") Integer page,
+                                  @NotNull @QueryParam("size") Integer pageSize,
                                   @Context UriInfo uriInfo) {
         try {
 
@@ -50,12 +51,12 @@ public class BrandResource {
             LinkBag self = new LinkBag(location.toString(),"brands");
             List<LinkBag> links = new ArrayList<>();
             links.add(self);
-            PaginableBag paginableBag = new PaginableBag(
-                    Collections.singletonList(list),
-                    links,
-                    service.getTotal(),
-                    page,
-                    pageSize);
+            PaginableBag paginableBag = new PaginableBuilder(Collections.singletonList(list))
+                    .withLinks(links)
+                    .withTotalOfRecords(service.getTotal())
+                    .inPage(page)
+                    .withPageSize(pageSize)
+                    .build();
             return Response.ok(paginableBag).build();
         } catch (PersistenceException | PersistenceExceptionCustom e) {
             e.printStackTrace();
