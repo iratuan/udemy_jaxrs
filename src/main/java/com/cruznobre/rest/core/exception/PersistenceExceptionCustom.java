@@ -7,4 +7,8 @@ public class PersistenceExceptionCustom extends Exception {
     public PersistenceExceptionCustom(String message, Throwable cause) {
         super(message, cause);
     }
+
+    public PersistenceExceptionCustom(String message) {
+        super(message);
+    }
 }

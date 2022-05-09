@@ -42,9 +42,7 @@ select * from public.brands]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files>
-      <object connection-id="3538935b-f2de-4ab6-aeb4-e18b4c4623d2" object-ref="consoles/connLocalhostShowroom 1" />
-    </open-files>
+    <open-files />
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="3538935b-f2de-4ab6-aeb4-e18b4c4623d2" />

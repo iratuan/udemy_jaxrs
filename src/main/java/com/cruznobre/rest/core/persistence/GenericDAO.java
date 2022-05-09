@@ -2,6 +2,8 @@ package com.cruznobre.rest.core.persistence;
 
 import com.cruznobre.rest.core.exception.ExistentEntityInPersistenceException;
 import com.cruznobre.rest.core.exception.PersistenceExceptionCustom;
+import jakarta.ejb.TransactionAttribute;
+import jakarta.ejb.TransactionAttributeType;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -22,6 +24,7 @@ public class GenericDAO<T, ID> {
         return factory.createEntityManager();
     }
 
+    @TransactionAttribute(TransactionAttributeType.NOT_SUPPORTED)
     public Long getTotal() throws PersistenceExceptionCustom {
         try {
             StringBuilder jpqlSb = new StringBuilder();
@@ -39,6 +42,7 @@ public class GenericDAO<T, ID> {
     }
 
 
+    @TransactionAttribute(TransactionAttributeType.NOT_SUPPORTED)
     public List<T> listAll(Integer page, Integer size) throws PersistenceException, PersistenceExceptionCustom {
         try {
             StringBuilder jpqlSb = new StringBuilder();
@@ -56,6 +60,7 @@ public class GenericDAO<T, ID> {
         }
     }
 
+    @TransactionAttribute(TransactionAttributeType.NOT_SUPPORTED)
     public T get(ID id) throws PersistenceException, PersistenceExceptionCustom {
         try {
             return this.getEntityManager().find(entityClass, id);
@@ -66,12 +71,14 @@ public class GenericDAO<T, ID> {
         }
     }
 
+    @TransactionAttribute(TransactionAttributeType.REQUIRED)
     public T save(T entity) throws PersistenceExceptionCustom {
         try {
             if (getEntityManager().contains(entity)) {
                 throw new ExistentEntityInPersistenceException("Erro ao generalizado ao executar comando sql ");
             } else {
                 entity = this.getEntityManager().merge(entity);
+                getEntityManager().flush();
                 return entity;
             }
         } catch (PersistenceException pe) {
@@ -81,6 +88,7 @@ public class GenericDAO<T, ID> {
         }
     }
 
+    @TransactionAttribute(TransactionAttributeType.REQUIRED)
     public void delete(T entity) throws PersistenceExceptionCustom {
         try {
             this.getEntityManager().remove(entity);

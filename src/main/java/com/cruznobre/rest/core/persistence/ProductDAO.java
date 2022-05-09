@@ -2,9 +2,7 @@ package com.cruznobre.rest.core.persistence;
 
 import com.cruznobre.rest.core.entity.Product;
 import com.cruznobre.rest.core.exception.PersistenceExceptionCustom;
-import jakarta.ejb.Stateless;
-import jakarta.ejb.TransactionManagement;
-import jakarta.ejb.TransactionManagementType;
+import jakarta.ejb.*;
 import jakarta.persistence.PersistenceException;
 import jakarta.persistence.TypedQuery;
 
@@ -19,6 +17,7 @@ public class ProductDAO extends GenericDAO<Product, Long> {
         super(Product.class);
     }
 
+    @TransactionAttribute(TransactionAttributeType.NOT_SUPPORTED)
     public List<Product> listAll(String category, Integer page, Integer size) throws PersistenceException, PersistenceExceptionCustom {
 
         try {
@@ -47,6 +46,7 @@ public class ProductDAO extends GenericDAO<Product, Long> {
         }
     }
 
+    @TransactionAttribute(TransactionAttributeType.NOT_SUPPORTED)
     public List<Product> listAllByBrand(Long brandId) throws PersistenceExceptionCustom {
         try {
             String jpql = "select p from Product p join fetch p.brand b where p.brand.id = :brandId ";

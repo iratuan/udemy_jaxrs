@@ -18,6 +18,8 @@ public class Brand {
     @Column(columnDefinition = "serial")
     private Long id;
 
+
+    @Column(name = "name", length = 50)
     private String name;
 
     @Override
